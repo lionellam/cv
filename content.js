@@ -4,8 +4,7 @@ const RESUME_DATA = {
     jobTitle: "Independent Consultant",
     postnominals: "PMP, PMI-ACP, IIBA-AAC, PSM, PSPO",
     contacts: [
-      { label: "+65 9722 2962", link: "tel:+6597222962" },
-      { label: "LLAM005@e.ntu.edu.sg", link: "mailto:LLAM005@e.ntu.edu.sg" },
+{ label: "LLAM005@e.ntu.edu.sg", link: "mailto:LLAM005@e.ntu.edu.sg" },
       { label: "linkedin.com/in/lamsp", link: "https://linkedin.com/in/lamsp" }
     ]
   },
