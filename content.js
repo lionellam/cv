@@ -128,7 +128,7 @@ const RESUME_DATA = {
     { title: "Rethinking the Role of Documentation", date: "Jan 2026", link: "https://substack.com/home/post/p-184867682", bullets: ["Documentation should not be treated as an output or proof of work, but as a tool for alignment and collaboration that helps teams clarify intent, decisions, and outcomes.", "The goal is not less documentation, but right-sized, purpose-driven documentation that supports execution, builds organisational learning, and fits the context."] }
   ],
   education: [
-    { period: "2025 – 2027 (Expected)", degree: "Master of Science in Project Management", school: "Nanyang Technological University (NTU), Singapore" },
-    { period: "2006 – 2009", degree: "Bachelor of Computer Science", school: "Universiti Teknologi Malaysia (UTM)" }
+    { period: "2025 – 2027 (Expected)", degree: "Master of Science in Project Management", school: "Nanyang Technological University (NTU), Singapore", logo: "img/logo-ntu.png" },
+    { period: "2006 – 2009", degree: "Bachelor of Computer Science", school: "Universiti Teknologi Malaysia (UTM)", logo: "img/logo-utm.png" }
   ]
 };
