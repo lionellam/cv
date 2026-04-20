@@ -12,8 +12,8 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 .site-nav a:hover { opacity: 1; color: var(--gold); }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 16px 0; background: none; border: none; margin-left: auto; }
 .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
-.mobile-menu { display: flex; flex-direction: column; background: var(--bg); border-top: 1px solid var(--border-light); max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
-.mobile-menu.open { max-height: 400px; }
+.mobile-menu { display: none; flex-direction: column; background: var(--bg); border-top: 1px solid var(--border-light); }
+.mobile-menu.open { display: flex; }
 .mobile-menu a { display: block; padding: 16px 24px; font-size: 13px; font-weight: 700; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--border-light); }
 .theme-toggle { background: none; border: 1px solid var(--border); border-radius: 20px; cursor: pointer; padding: 6px 10px; display: inline-flex; align-items: center; justify-content: center; color: var(--navy); margin-left: 12px; transition: 0.2s; }
 .theme-toggle:hover { border-color: var(--gold); color: var(--gold); }
