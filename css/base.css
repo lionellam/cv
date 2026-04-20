@@ -34,6 +34,9 @@ h1 { font-size: clamp(1.5rem, 6vw, 3.2rem); font-weight: 700; color: var(--navy)
 .contact-list a { color: var(--navy-mid); text-decoration: none; font-size: 14px; font-weight: 500; }
 .contact-list a:hover { color: var(--gold); text-decoration: underline; }
 
+.download-btn { display: inline-block; margin-top: 16px; padding: 8px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); border-radius: 4px; text-decoration: none; transition: 0.2s; }
+.download-btn:hover { background: var(--gold); color: var(--white); }
+
 .summary { padding: 40px 0; border-bottom: 1px solid var(--border-light); }
 .summary p { font-size: 18px; color: var(--text-mid); text-align: justify; margin-bottom: 20px; }
 
