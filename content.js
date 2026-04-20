@@ -113,14 +113,14 @@ const RESUME_DATA = {
     { category: "Information Security", tags: ["ISO 27001 / ISMS", "Kali Linux", "Nmap"] }
   ],
   certifications: [
-    { name: "PMP — Project Management Professional", issuer: "Project Management Institute", id: "2807795", badge: "https://images.credly.com/images/731e7ef4-9b0c-4d7b-ab65-23cc699c0aa3/blob" },
-    { name: "PMI-ACP — Agile Certified Practitioner", issuer: "Project Management Institute", id: "4043132", badge: "https://images.credly.com/images/884f1605-f439-4b0d-ba7c-76a921266d45/blob" },
-    { name: "IIBA-AAC — Agile Analysis Certification", issuer: "International Institute of Business Analysis", id: "86683256", badge: "https://images.credly.com/images/94aa8ec7-72b0-44b4-810c-d485036c6d5b/552ab952-5462-4a19-93ab-28f3f1ae686a_cached_image_20260309-32-h4f6h9.png" },
-    { name: "Professional Scrum Master I", issuer: "Scrum.org", id: "597874", badge: "https://images.credly.com/images/a2790314-008a-4c3d-9553-f5e84eb359ba/image.png" },
-    { name: "Professional Scrum Product Owner I", issuer: "Scrum.org", id: "603850", badge: "https://images.credly.com/images/591762c5-fae7-49c6-b326-e1756979928d/image.png" },
-    { name: "CC — Certified in Cybersecurity", issuer: "ISC2", id: "1881254", badge: "https://images.credly.com/images/2030e43f-8003-4d4b-9630-847add403c87/image.png" },
-    { name: "Security+", issuer: "CompTIA", id: "RZFCVTBRP24QQL98", badge: "https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob" },
-    { name: "Google Cybersecurity Certificate", issuer: "Google", id: "RPOCHLB61H9J", badge: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/92/d0d1ee4a844037be9a2d349ee5f59d/GoogleG_FullColor_RGB.png?auto=format%2Ccompress&dpr=2&w=80&h=80" }
+    { name: "PMP — Project Management Professional", issuer: "Project Management Institute", id: "2807795", badge: "img/badge-pmp.png" },
+    { name: "PMI-ACP — Agile Certified Practitioner", issuer: "Project Management Institute", id: "4043132", badge: "img/badge-pmi-acp.png" },
+    { name: "IIBA-AAC — Agile Analysis Certification", issuer: "International Institute of Business Analysis", id: "86683256", badge: "img/badge-iiba-aac.png" },
+    { name: "Professional Scrum Master I", issuer: "Scrum.org", id: "597874", badge: "img/badge-psm.png" },
+    { name: "Professional Scrum Product Owner I", issuer: "Scrum.org", id: "603850", badge: "img/badge-pspo.png" },
+    { name: "CC — Certified in Cybersecurity", issuer: "ISC2", id: "1881254", badge: "img/badge-cc.png" },
+    { name: "Security+", issuer: "CompTIA", id: "RZFCVTBRP24QQL98", badge: "img/badge-security-plus.png" },
+    { name: "Google Cybersecurity Certificate", issuer: "Google", id: "RPOCHLB61H9J", badge: "img/badge-google-cybersecurity.png" }
   ],
   publications: [
     { title: "Rethinking the Role of Artificial Intelligence in Requirements Lifecycle Management", date: "Jan 2026", link: "https://substack.com/home/post/p-184869025", bullets: ["Artificial intelligence is increasingly recognized as an effective resource for enhancing productivity in areas such as writing, summarization, and workflow automation. However, within requirements management, the quality of results is contingent upon establishing well-defined objectives at the outset.", "This article examines how AI can contribute to requirements management by consolidating requirements, generating documents suitable for review, and detecting potential issues early, all with the essential support of human oversight."] },
