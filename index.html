@@ -22,7 +22,7 @@
         <li><a href="#skills-header">Skills</a></li>
         <li><a href="#certifications-header">Certifications</a></li>
         <li><a href="#publications-header">Publications</a></li>
-        <li><a href="#volunteer-header">Volunteer</a></li>
+        <li><a href="#volunteer-header">Contributions</a></li>
         <li><a href="#education-header">Education</a></li>
       </ul>
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
@@ -49,7 +49,7 @@
       <a href="#skills-header" onclick="this.parentElement.classList.remove('open')">Skills</a>
       <a href="#certifications-header" onclick="this.parentElement.classList.remove('open')">Certifications</a>
       <a href="#publications-header" onclick="this.parentElement.classList.remove('open')">Publications</a>
-      <a href="#volunteer-header" onclick="this.parentElement.classList.remove('open')">Volunteer</a>
+      <a href="#volunteer-header" onclick="this.parentElement.classList.remove('open')">Contributions</a>
       <a href="#education-header" onclick="this.parentElement.classList.remove('open')">Education</a>
     </div>
   </nav>
@@ -109,7 +109,7 @@
 
     <section class="section">
       <div class="section-header" id="volunteer-header">
-        <h2 class="section-title">Volunteer Work</h2><div class="section-rule"></div>
+        <h2 class="section-title">Other Contributions</h2><div class="section-rule"></div>
       </div>
       <div id="volunteer-container"></div>
     </section>
@@ -202,7 +202,7 @@
         </div>
       `).join('');
 
-      // Volunteer
+      // Contributions
       document.getElementById('volunteer-container').innerHTML = d.volunteer.map(e => `
         <div class="employer-block">
           <div class="employer-name">${e.employer}</div>
