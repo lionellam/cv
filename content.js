@@ -105,6 +105,22 @@ const RESUME_DATA = {
     { employer: "3M Singapore Pte. Ltd.", desc: "Web Developer — Website & Portal Maintenance (May 2013 – Aug 2013)" },
     { employer: "SAINS Sdn. Bhd., Malaysia", desc: "Software Engineer — Housing Information System & State Integrated Financial System (Oct 2009 – Jan 2013)" }
   ],
+  volunteer: [
+    {
+      employer: "Project Management Institute (Singapore Chapter)",
+      role: "Volunteer Contributor",
+      projects: [
+        {
+          title: "Volunteer Contributions",
+          period: "2024 – Present<br>Singapore",
+          bullets: [
+            "Co-lead, Academic Outreach Program",
+            "Guest Speaker at Singapore Management University (PMI Meet & Greet Session)"
+          ]
+        }
+      ]
+    }
+  ],
   skills: [
     { category: "Project Management", tags: ["Planning & Scheduling", "Critical Chain Project Management", "Agile and Hybrid Methodologies", "Stakeholder Management", "Meetings Management and Facilitation", "Contract & Vendor Management", "Negotiation", "Mentoring and Coaching", "Earned Value Management"] },
     { category: "Business Analysis", tags: ["Requirements Management and Elicitation", "Story Mapping", "Iteration and Release Planning", "Data Analysis", "Business Process Modelling"] },

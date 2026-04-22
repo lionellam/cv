@@ -22,6 +22,7 @@
         <li><a href="#skills-header">Skills</a></li>
         <li><a href="#certifications-header">Certifications</a></li>
         <li><a href="#publications-header">Publications</a></li>
+        <li><a href="#volunteer-header">Volunteer</a></li>
         <li><a href="#education-header">Education</a></li>
       </ul>
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
@@ -48,6 +49,7 @@
       <a href="#skills-header" onclick="this.parentElement.classList.remove('open')">Skills</a>
       <a href="#certifications-header" onclick="this.parentElement.classList.remove('open')">Certifications</a>
       <a href="#publications-header" onclick="this.parentElement.classList.remove('open')">Publications</a>
+      <a href="#volunteer-header" onclick="this.parentElement.classList.remove('open')">Volunteer</a>
       <a href="#education-header" onclick="this.parentElement.classList.remove('open')">Education</a>
     </div>
   </nav>
@@ -103,6 +105,13 @@
         <h2 class="section-title">Publications</h2><div class="section-rule"></div>
       </div>
       <div id="pubs-container"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-header" id="volunteer-header">
+        <h2 class="section-title">Volunteer Work</h2><div class="section-rule"></div>
+      </div>
+      <div id="volunteer-container"></div>
     </section>
 
     <section class="section" style="border-bottom: none;">
@@ -190,6 +199,23 @@
               <ul>${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
             </div>
           </div>
+        </div>
+      `).join('');
+
+      // Volunteer
+      document.getElementById('volunteer-container').innerHTML = d.volunteer.map(e => `
+        <div class="employer-block">
+          <div class="employer-name">${e.employer}</div>
+          <div class="employer-role">${e.role}</div>
+          ${e.projects.map(p => `
+            <div class="project">
+              <div class="project-period">${p.period}</div>
+              <div>
+                <div class="project-name">${p.title}</div>
+                <ul>${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+              </div>
+            </div>
+          `).join('')}
         </div>
       `).join('');
 
