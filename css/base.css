@@ -46,6 +46,8 @@ h1 { font-size: clamp(1.5rem, 6vw, 3.2rem); font-weight: 700; color: var(--navy)
 .section-rule { flex: 1; height: 1px; background: var(--border); }
 
 .employer-block { margin-bottom: 40px; }
+.employer-block:last-child { margin-bottom: 0; }
+.edu-item:last-child { padding-bottom: 0; }
 .employer-name { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
 .employer-role { font-size: 13px; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
 
