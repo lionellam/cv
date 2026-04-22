@@ -109,7 +109,11 @@ footer p, footer a { font-size: 14px; font-weight: 500; color: var(--text-faint)
 .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .back-to-top:hover { background: var(--gold-light); }
 
-@media (max-width: 900px) { .cert-list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) {
+  .cert-list { grid-template-columns: repeat(2, 1fr); }
+  .site-nav a { padding: 16px 9px; letter-spacing: 0.06em; }
+  .site-nav .nav-inner { padding: 0 16px; }
+}
 @media (max-width: 768px) {
   header { grid-template-columns: 1fr; text-align: center; } .header-right { text-align: center; margin-top: 20px; }
   .contact-list { align-items: center; } .two-col { grid-template-columns: 1fr; } .title-rule { margin: 16px auto; }
