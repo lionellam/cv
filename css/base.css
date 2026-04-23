@@ -37,6 +37,13 @@ h1 { font-size: clamp(1.5rem, 6vw, 3.2rem); font-weight: 700; color: var(--navy)
 .download-btn { display: inline-block; margin-top: 16px; padding: 8px 16px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); border-radius: 4px; text-decoration: none; transition: 0.2s; }
 .download-btn:hover { background: var(--gold); color: var(--white); }
 
+.pub-entry { padding: 20px 0; border-top: 1px solid var(--border-light); }
+.pub-entry .project-name { margin-bottom: 6px; }
+.pub-entry .project-period { margin-bottom: 16px; }
+.pub-entry ul { list-style: none; }
+.pub-entry ul li { font-size: 15.5px; color: var(--text-mid); padding-left: 20px; position: relative; margin-bottom: 12px; }
+.pub-entry ul li::before { content: '•'; position: absolute; left: 0; color: var(--gold-light); font-weight: 700; }
+
 .pub-link { display: inline-block; margin-top: 20px; padding: 6px 14px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); border-radius: 4px; text-decoration: none; transition: 0.2s; }
 .pub-link:hover { background: var(--gold); color: var(--white); }
 
