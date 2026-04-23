@@ -193,10 +193,11 @@
       document.getElementById('pubs-container').innerHTML = d.publications.map(p => `
         <div class="employer-block">
           <div class="project">
-            <div class="project-period">${p.date}<br><a href="${p.link}" target="_blank">Substack</a></div>
+            <div class="project-period">${p.date}</div>
             <div>
               <div class="project-name">${p.title}</div>
               <ul>${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+              <a class="pub-link" href="${p.link}" target="_blank" rel="noopener noreferrer">Read article →</a>
             </div>
           </div>
         </div>
