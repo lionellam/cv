@@ -14,7 +14,7 @@ body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-ser
 .hamburger span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 2px; }
 .mobile-menu { position: absolute; top: 100%; left: 0; right: 0; z-index: 99; display: flex; flex-direction: column; background: var(--bg); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); box-shadow: 0 4px 12px rgba(0,0,0,0.08); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s; }
 .mobile-menu.open { opacity: 1; visibility: visible; transform: translateY(0); }
-.mobile-menu a { display: block; padding: 16px 24px; font-size: 13px; font-weight: 700; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--border-light); }
+.mobile-menu a { display: block; padding: 16px 24px; font-size: 13px; font-weight: 700; text-transform: uppercase; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--border-light); text-align: center; }
 .theme-toggle { background: none; border: 1px solid var(--border); border-radius: 20px; cursor: pointer; padding: 6px 10px; display: inline-flex; align-items: center; justify-content: center; color: var(--navy); margin-left: 12px; transition: 0.2s; }
 .theme-toggle:hover { border-color: var(--gold); color: var(--gold); }
 .icon-moon { display: block; }
