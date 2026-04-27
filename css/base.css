@@ -90,7 +90,7 @@ h1 { font-size: clamp(1.5rem, 6vw, 3.2rem); font-weight: 700; color: var(--navy)
 .edu-school { font-size: 16px; color: var(--text-muted); }
 .edu-logo { height: 64px; width: 160px; object-fit: contain; opacity: 0.85; padding: 6px 10px; border-radius: 8px; }
 [data-theme="dark"] .edu-logo { background: rgba(255, 255, 255, 0.92); }
-[data-theme="dark"] .cert-badge { background: rgba(255, 255, 255, 0.92); border-radius: 8px; padding: 6px; width: 92px; height: 92px; }
+[data-theme="dark"] .cert-badge { background: rgba(255, 255, 255, 0.92); border-radius: 8px; padding: 6px; box-sizing: border-box; }
 
 footer { padding: 40px 0; display: flex; justify-content: space-between; border-top: 2px solid var(--border); margin-top: 20px; }
 footer p, footer a { font-size: 14px; font-weight: 500; color: var(--text-faint); text-decoration: none; }
