@@ -123,7 +123,6 @@
 
     <footer>
       <p id="footer-copy"></p>
-      <p><a id="footer-email" href=""></a></p>
     </footer>
   </div>
 
@@ -228,10 +227,7 @@
       `).join('');
 
       // Footer
-      document.getElementById('footer-copy').innerHTML = `© ${new Date().getFullYear()} ${d.profile.name} &nbsp;`;
-      const email = d.profile.contacts.find(c => c.link.startsWith('mailto:'));
-      document.getElementById('footer-email').href = email.link;
-      document.getElementById('footer-email').textContent = email.label;
+      document.getElementById('footer-copy').innerHTML = `© ${new Date().getFullYear()} ${d.profile.name}`;
 
       // Theme toggle
       const btn = document.getElementById('theme-toggle');
