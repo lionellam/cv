@@ -108,7 +108,7 @@ const RESUME_DATA = {
   volunteer: [
     {
       employer: "Project Management Institute (Singapore Chapter)",
-      role: "Volunteer Contributor",
+      role: "Volunteer",
       projects: [
         {
           title: "Volunteer Contributions",
