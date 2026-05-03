@@ -7,9 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/base.css" />
+  <script src="config.js"></script>
   <script>
-    const saved = localStorage.getItem('theme');
-    if (saved) document.documentElement.setAttribute('data-theme', saved);
+    // Apply theme on load — respect saved dark/light preference, use config for base theme
+    (function () {
+      const base = (typeof SITE_CONFIG !== 'undefined' ? SITE_CONFIG.theme : null) || 'gold';
+      const savedDark = localStorage.getItem('theme-dark');
+      const theme = savedDark === 'true' ? base + '-dark' : base;
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
   </script>
 </head>
 <body>
@@ -229,15 +235,17 @@
       // Footer
       document.getElementById('footer-copy').innerHTML = `© ${new Date().getFullYear()} ${d.profile.name}`;
 
-      // Theme toggle
+      // Theme toggle (dark/light within current base theme)
       const btn = document.getElementById('theme-toggle');
-      const applyTheme = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+      const getBase = () => (typeof SITE_CONFIG !== 'undefined' ? SITE_CONFIG.theme : null) || 'gold';
+      const applyTheme = (isDark) => {
+        const t = isDark ? getBase() + '-dark' : getBase();
+        document.documentElement.setAttribute('data-theme', t);
+        localStorage.setItem('theme-dark', isDark ? 'true' : 'false');
       };
       btn.addEventListener('click', () => {
         const current = document.documentElement.getAttribute('data-theme');
-        applyTheme(current === 'dark' ? 'light' : 'dark');
+        applyTheme(!current.endsWith('-dark'));
       });
 
       // Back to top button
