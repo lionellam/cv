@@ -123,7 +123,7 @@ const RESUME_DATA = {
   ],
   skills: [
     { category: "Project Management", tags: ["Planning & Scheduling", "Critical Chain Project Management", "Agile and Hybrid Methodologies", "Stakeholder Management", "Meetings Management and Facilitation", "Contract & Vendor Management", "Negotiation", "Mentoring and Coaching", "Earned Value Management"] },
-    { category: "Business Analysis", tags: ["Requirements Management and Elicitation", "Story Mapping", "Iteration and Release Planning", "Data Analysis", "Business Process Modelling"] },
+    { category: "Business Analysis", tags: ["Requirements Management and Elicitation", "Story Mapping", "Iteration and Release Planning", "Data Analysis", "Business Process Modelling", "Service Design"] },
     { category: "Productivity Tools", tags: ["Microsoft Project", "Microsoft Office", "Atlassian Jira & Confluence", "Miro"] },
     { category: "Programming & Scripting Languages", tags: ["Python", "SQL"] },
     { category: "Information Security", tags: ["ISO 27001 / ISMS", "Kali Linux", "Nmap"] }
