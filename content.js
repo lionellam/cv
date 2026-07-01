@@ -1,7 +1,7 @@
 const RESUME_DATA = {
   profile: {
     name: "Lionel Lam Song Poh",
-    jobTitle: "Independent Consultant",
+    jobTitle: "Independent Researcher",
     postnominals: "PMP, PMI-ACP, IIBA-AAC, PSM, PSPO",
     contacts: [
 { label: "LLAM005@e.ntu.edu.sg", link: "mailto:LLAM005@e.ntu.edu.sg" },
@@ -16,12 +16,12 @@ const RESUME_DATA = {
   ],
   experience: [
     {
-      employer: "Independent / Fractional Consultant",
+      employer: "Independent Consultant",
       role: "",
       projects: [
         {
           title: "Strategic Advisory & Systems Stewardship",
-          period: "Jan 2026 – Present<br>APAC",
+          period: "Jan 2026 – Jun 2026<br>APAC",
           bullets: [
             "Partner with senior stakeholders to enable cultural shifts toward Agile and adaptive ways of working through stewardship, stakeholder engagement, and sustainable team practices.",
             "Design and implement sustainable systems, operating frameworks, and methodologies that are tailored to organizational strategy, maturity, and context.",
