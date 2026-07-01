@@ -114,7 +114,7 @@ const RESUME_DATA = {
           title: "Volunteer Contributions",
           period: "2024 – Present<br>Singapore",
           bullets: [
-            "Co-lead, Academic Outreach Program",
+            "Academic Outreach Program",
             "Guest Speaker at Singapore Management University (PMI Meet & Greet Session)"
           ]
         }
