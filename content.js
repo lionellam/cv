@@ -156,7 +156,8 @@ const RESUME_DATA = {
     { category: "Business Analysis", tags: ["Requirements Management and Elicitation", "Story Mapping", "Iteration and Release Planning", "Data Analysis", "Business Process Modelling", "Service Design"] },
     { category: "Productivity Tools", tags: ["Microsoft Project", "Microsoft Office", "Atlassian Jira & Confluence", "Miro"] },
     { category: "Programming & Scripting Languages", tags: ["Python", "SQL"] },
-    { category: "Information Security", tags: ["ISO 27001 / ISMS", "Kali Linux", "Nmap"] }
+    { category: "Information Security", tags: ["ISO 27001 / ISMS", "Kali Linux", "Nmap"] },
+    { category: "Artificial Intelligence", tags: ["Claude Code", "AI-assisted Requirements Definition"] }
   ],
   certifications: [
     { name: "PMP — Project Management Professional", issuer: "Project Management Institute", id: "2807795", badge: "img/badge-pmp.png" },
