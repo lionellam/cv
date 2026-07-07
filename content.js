@@ -1,5 +1,5 @@
 const RESUME_DATA = {
-  lastUpdated: "7 July 2026",
+  lastUpdated: "8 July 2026",
   profile: {
     name: "Lionel Lam Song Poh",
     jobTitle: "Independent Scholar",
