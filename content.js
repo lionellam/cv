@@ -1,7 +1,7 @@
 const RESUME_DATA = {
   profile: {
     name: "Lionel Lam Song Poh",
-    jobTitle: "Independent Researcher",
+    jobTitle: "Independent Scholar",
     postnominals: "PMP, PMI-ACP, IIBA-AAC, PSM, PSPO",
     contacts: [
 { label: "LLAM005@e.ntu.edu.sg", link: "mailto:LLAM005@e.ntu.edu.sg" },
