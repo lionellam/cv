@@ -129,6 +129,7 @@
 
     <footer>
       <p id="footer-copy"></p>
+      <p id="footer-updated"></p>
     </footer>
   </div>
 
@@ -234,6 +235,7 @@
 
       // Footer
       document.getElementById('footer-copy').innerHTML = `© ${new Date().getFullYear()} ${d.profile.name}`;
+      document.getElementById('footer-updated').innerHTML = `Last updated: ${d.lastUpdated}`;
 
       // Theme toggle (dark/light within current base theme)
       const btn = document.getElementById('theme-toggle');

@@ -1,4 +1,5 @@
 const RESUME_DATA = {
+  lastUpdated: "7 July 2026",
   profile: {
     name: "Lionel Lam Song Poh",
     jobTitle: "Independent Scholar",
@@ -9,10 +10,10 @@ const RESUME_DATA = {
     ]
   },
   summary: [
-    "Lionel is an accomplished project and business analysis professional with over a decade of experience in the information technology sector, delivering high-stakes initiatives for organizations including the Government Technology Agency, National Environment Agency, Intellectual Property Office of Singapore, and Singapore State Courts.",
-    "He views orchestration as a vital strategic capability essential for navigating complexity and fostering lasting, meaningful change. He also specializes in designing sustainable systems and operating frameworks that are tailored to an organization’s strategy, maturity, and specific context.",
-    "His approach focuses on diagnosing systemic constraints and introducing targeted interventions to improve flow and cross-functional alignment. By strengthening organizational line-of-sight between strategy, capability development and outcomes, this ensures that results translate into sustainable impact and long-term value.",
-    "As a deeply committed member of the project management community, Lionel integrates Agile and hybrid methodologies with a focus on quality and systemic resilience, fostering innovation and enduring excellence in every undertaking."
+    "Lionel Lam is a senior technology professional with over a decade of experience in the information technology sector, spanning roles and delivering solutions across Singapore’s public service including the Government Technology Agency, National Environment Agency, Intellectual Property Office of Singapore, and Singapore State Courts.",
+    "His work currently centres on building team and organisational capability — designing the systems, frameworks, and operating models that enable teams and institutions to execute with clarity, adapt to complexity, and sustain meaningful outcomes over time. Project management and business analysis are the lenses through which he does this work: diagnosing systemic constraints, improving cross-functional flow, and strengthening the line-of-sight between strategy, execution, and results.",
+    "Underpinning this is a lifelong orientation toward learning — not as a credential exercise, but as a practical discipline. Lionel is currently pursuing an MSc in Project Management at Nanyang Technological University (NTU), Singapore, bringing the same rigour he applies in practice to questions of how organisations learn, govern, and deliver at scale. He holds professional certifications including PMP, PMI-ACP, IIBA-AAC, and PSM, and integrates Agile and hybrid methodologies with a focus on systemic resilience and long-term value.",
+    "As an active member of the project management community, he remains committed to the idea that good practice is never finished — that the distance between what organisations intend and what they are actually able to do is always worth closing."
   ],
   experience: [
     {
@@ -116,6 +117,20 @@ const RESUME_DATA = {
           bullets: [
             "Academic Outreach Program",
             "Guest Speaker at Singapore Management University (PMI Meet & Greet Session)"
+          ]
+        }
+      ]
+    },
+    {
+      employer: "Project Hercules",
+      role: "Contributor",
+      projects: [
+        {
+          title: "Open Source Project",
+          period: "2026 – Present<br>Singapore",
+          bullets: [
+            "Contributing to an open source, self-hosted expense tracker built for the community — powered by a Small Language Model (SLM) natural language interface.",
+            "Applying the CPMAI framework to validate the feasibility of cognitive project development in a real-world context."
           ]
         }
       ]
