@@ -17,6 +17,21 @@ const RESUME_DATA = {
   ],
   experience: [
     {
+      employer: "Meteorological Service Singapore, National Environment Agency",
+      role: "Assistant Director, Digital Services",
+      projects: [
+        {
+          title: "Weather.gov.sg & MyEnv",
+          period: "Jul 2026 – Present<br>Meteorological Observations & Systems Division, National Environment Agency",
+          bullets: [
+            "Leading the product roadmap for NEA/MSS public-facing digital platforms — including weather.gov.sg, myEnv, and supporting data platforms — transforming complex meteorological data into accessible digital services.",
+            "Defining product requirements and collaborating closely with engineering, design, research, and operations teams to drive continuous enhancement of mission-critical weather applications and user experience.",
+            "Managing stakeholder relationships across government agencies and external partners to ensure alignment, successful implementation, and delivery of proof-of-concept solutions for new product features and capabilities."
+          ]
+        }
+      ]
+    },
+    {
       employer: "Independent Consultant",
       role: "",
       projects: [
