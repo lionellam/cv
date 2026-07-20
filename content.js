@@ -20,7 +20,7 @@ const RESUME_DATA = {
       role: "Assistant Director, Digital Services",
       projects: [
         {
-          title: "Weather.gov.sg & MyEnv",
+          title: "weather.gov.sg & myEnv",
           period: "Jul 2026 – Present<br>Meteorological Observations & Systems Division, National Environment Agency",
           bullets: [
             "Steward the product roadmap for NEA/MSS public-facing digital platforms — including weather.gov.sg, myEnv, and supporting data platforms — transforming complex meteorological data into accessible digital services.",
