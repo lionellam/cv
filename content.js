@@ -31,8 +31,8 @@ const RESUME_DATA = {
       ]
     },
     {
-      employer: "Independent Consultant",
-      role: "",
+      employer: "GoAcara.com",
+      role: "Transformation Consultant",
       projects: [
         {
           title: "Strategic Advisory & Systems Stewardship",
