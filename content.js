@@ -36,7 +36,7 @@ const RESUME_DATA = {
       projects: [
         {
           title: "Strategic Advisory & Systems Stewardship",
-          period: "Jan 2026 – Jun 2026<br>APAC",
+          period: "Jan 2026 – Jun 2026<br>GoAcara",
           bullets: [
             "Partner with senior stakeholders to enable cultural shifts toward Agile and adaptive ways of working through stewardship, stakeholder engagement, and sustainable team practices.",
             "Design and implement sustainable systems, operating frameworks, and methodologies that are tailored to organizational strategy, maturity, and context.",
