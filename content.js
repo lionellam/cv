@@ -115,7 +115,7 @@ const RESUME_DATA = {
   ],
   earlierCareer: [
     { employer: "Accenture SG Services Pte. Ltd.", desc: "Senior Software Engineer — Central Case Management System / OneService@SG (Sep 2019 – Jan 2020)" },
-    { employer: "Ecquaria Technologies Pte. Ltd.", desc: "Senior BA / Project Manager — Weather Information Website for Meteorological Service Singapore, NEA (Mar 2016 – Sep 2019)" },
+    { employer: "Ecquaria Technologies Pte. Ltd.", desc: "Senior Business Analyst / Project Manager — Weather Information Website for Meteorological Service Singapore, NEA (Mar 2016 – Sep 2019)" },
     { employer: "TO THE NEW Digital, Singapore", desc: "Project Manager / Manager of Marketing Tech — Social Media, Web & EDM Projects (Aug 2013 – Dec 2015)" },
     { employer: "3M Singapore Pte. Ltd.", desc: "Web Developer — Website & Portal Maintenance (May 2013 – Aug 2013)" },
     { employer: "SAINS Sdn. Bhd., Malaysia", desc: "Software Engineer — Housing Information System & State Integrated Financial System (Oct 2009 – Jan 2013)" }
