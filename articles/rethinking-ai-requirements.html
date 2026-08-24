@@ -93,6 +93,26 @@
       color: var(--text-muted);
     }
     .article-substack-note a { color: var(--accent); }
+    .article-cover {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 32px;
+    }
+    .article-figure {
+      margin: 2em 0;
+      text-align: center;
+    }
+    .article-figure img {
+      max-width: 100%;
+      border-radius: 4px;
+      border: 1px solid var(--border-light);
+    }
+    .article-figure figcaption {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -104,6 +124,7 @@
     <h1 class="article-title">Rethinking the Role of Artificial Intelligence in Requirements Lifecycle Management</h1>
     <p class="article-subtitle">Shifting the paradigm: from "output" to "coherence"</p>
     <hr class="article-rule" />
+    <img class="article-cover" src="img/ai-req-cover.png" alt="Rethinking the Role of Artificial Intelligence in Requirements Lifecycle Management" />
 
     <div class="article-body">
       <p>Artificial intelligence is increasingly recognized as an effective resource for enhancing productivity in areas such as writing, summarization, and workflow automation. However, within requirements management, the quality of results is contingent upon establishing well-defined objectives at the outset. Ambiguous intentions or requirements can cause teams to advance quickly but may ultimately result in unsuitable solutions, which can lead to quality concerns, extensive testing needs, and rework.</p>
@@ -137,6 +158,10 @@
 
       <h2>The workflow: Keeping humans in the loop, always</h2>
       <p>A proven pattern is to treat requirements as a baseline plus a coherent artefact set: capture intent → establish a baseline → generate artefacts → interrogate → validate → regenerate coherently.</p>
+      <figure class="article-figure">
+        <img src="img/ai-req-fig1.png" alt="Figure 1: End-to-end AI-assisted requirements lifecycle management" />
+        <figcaption>Figure 1: End-to-end AI-assisted requirements lifecycle management</figcaption>
+      </figure>
       <p>So, putting this together, it's the discipline of:</p>
       <ul>
         <li>maintaining one "source of truth" baseline</li>
@@ -192,6 +217,10 @@
 
       <h2>Change impact tracking: an anti-drift mechanism</h2>
       <p>An important risk associated with project delivery is not the original baseline itself, but rather the deviations introduced by ongoing changes. The issue does not lie in change per se; instead, it stems from the unmonitored consequences and ripple effects that may arise.</p>
+      <figure class="article-figure">
+        <img src="img/ai-req-fig2.png" alt="Figure 2: Change request & impact analysis loop (Anti-drift mechanism)" />
+        <figcaption>Figure 2: Change request &amp; impact analysis loop (Anti-drift mechanism)</figcaption>
+      </figure>
       <p>Used carefully, AI can help teams:</p>
       <ul>
         <li>differentiate and compare baseline versions, and surface what truly changed</li>
@@ -204,7 +233,12 @@
 
       <h2>Coherence across stakeholders: AI as a conflict surface</h2>
       <p>Coherence isn't only a documentation problem. It's also an intent-balancing problem. In real delivery environments, there are competing needs: speed vs control, usability vs compliance, flexibility vs auditability, autonomy vs governance, simplicity vs exception-handling.</p>
-      <p>Where one stakeholder's needs conflict with another's, the system can sound coherent on paper while hiding tensions that only surface later—during build, UAT, or after release. AI can act as a conflict surface by helping to:</p>
+      <p>Where one stakeholder's needs conflict with another's, the system can sound coherent on paper while hiding tensions that only surface later—during build, UAT, or after release.</p>
+      <figure class="article-figure">
+        <img src="img/ai-req-fig3.png" alt="Figure 3: AI-assisted stakeholder intent balancing (conflict surfacing + trade-off resolution)" />
+        <figcaption>Figure 3: AI-assisted stakeholder intent balancing (conflict surfacing + trade-off resolution)</figcaption>
+      </figure>
+      <p>AI can act as a conflict surface by helping to:</p>
       <ul>
         <li>identify potential stakeholder conflicts embedded in rules and flows</li>
         <li>highlight trade-offs or assumptions being made implicitly (but not agreed or surfaced explicitly)</li>
@@ -233,6 +267,15 @@
         <li>it anchors decisions so they don't dissolve after the meeting</li>
       </ul>
       <p>AI can draft. But humans validate. And the feedback loop gets tighter.</p>
+
+      <h2>Sample artefact: Acceptance criteria as a stakeholder review surface</h2>
+      <p>One practical example is a Gherkin-style acceptance criteria table. Rather than treating it as "documentation for the team", it can be positioned as a stakeholder review surface—a concrete way to validate intent, exceptions, and edge cases early.</p>
+      <figure class="article-figure">
+        <img src="img/ai-req-table1.png" alt="Table 1: Sample AI-generated acceptance criteria table" />
+        <figcaption>Table 1: Sample AI-generated acceptance criteria table</figcaption>
+      </figure>
+      <p>What's powerful isn't just generating this quickly. It's keeping it coherent with the rest of the requirements set: aligned to the baseline rules and definitions, consistent with the workflow/flowcharts, updated when changes are introduced (anti-drift), and stress-tested through persona lenses to surface missing scenarios and conflicting expectations.</p>
+      <p>This is where AI becomes more than a writing assistant: it becomes a coherence engine that helps keep humans in the loop—by making review easier, faster, and more complete.</p>
 
       <h2>Suggested guardrails</h2>
       <p>AI, like most good things in life, can be a double-edged sword. AI can accelerate mistakes if it is treated as authoritative. Some guardrails are essential:</p>
