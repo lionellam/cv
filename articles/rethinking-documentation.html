@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rethinking the Role of Documentation — Lionel Lam</title>
+  <link rel="canonical" href="https://lionellam.substack.com/p/rethinking-the-role-of-documentation" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <script src="../config.js"></script>
+  <script>
+    (function () {
+      const base = (typeof SITE_CONFIG !== 'undefined' ? SITE_CONFIG.theme : null) || 'gold';
+      const savedDark = localStorage.getItem('theme-dark');
+      const theme = savedDark === 'true' ? base + '-dark' : base;
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <style>
+    .article-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 40px;
+    }
+    .article-back:hover { text-decoration: underline; }
+    .article-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .article-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--heading);
+      line-height: 1.25;
+      margin: 0 0 32px;
+    }
+    .article-rule {
+      border: none;
+      border-top: 2px solid var(--accent);
+      width: 40px;
+      margin: 0 0 32px;
+    }
+    .article-body h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin: 2em 0 0.5em;
+    }
+    .article-body p {
+      color: var(--text);
+      line-height: 1.75;
+      margin: 0 0 1.1em;
+    }
+    .article-body ul {
+      color: var(--text);
+      line-height: 1.75;
+      margin: 0 0 1.1em;
+      padding-left: 1.4em;
+    }
+    .article-body ul li { margin-bottom: 0.3em; }
+    .article-body strong { color: var(--heading); }
+    .article-closing {
+      margin-top: 2em;
+      padding: 20px 24px;
+      border-left: 3px solid var(--accent);
+      background: var(--white);
+    }
+    .article-closing p {
+      margin: 0;
+      font-style: italic;
+      color: var(--text-mid);
+    }
+    .article-substack-note {
+      margin-top: 48px;
+      padding: 16px 20px;
+      border-left: 3px solid var(--accent);
+      background: var(--white);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-substack-note a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="top-rule"></div>
+  <div class="article-wrap">
+    <a class="article-back" href="../index.html">← Back to CV</a>
+
+    <div class="article-meta">Lionel Lam &nbsp;·&nbsp; 17 January 2026 &nbsp;·&nbsp; Constellations</div>
+    <h1 class="article-title">Rethinking the Role of Documentation</h1>
+    <hr class="article-rule" />
+
+    <div class="article-body">
+      <p>In my work as a project and Agile lead, I've come to see that the hardest problems are rarely technical—they're about alignment, shared understanding, and the invisible gaps between people. I happen to also do pro-bono coaching and advisory work on the side, and a recent engagement brought a quiet realisation back into focus: the way teams think about documentation often determines whether it becomes leverage—or drag.</p>
+      <p>Documentation often gets treated as an output: something to produce for compliance, reassurance, or "completeness." In many teams, it becomes a proxy for control—especially when uncertainty rises and stakes feel high.</p>
+      <p>But in high-performing teams, documentation isn't the product. It's a process tool—an enabler that strengthens collaboration, supports execution, and quietly raises organisational capability over time. The shift is subtle but important: documentation isn't there to prove work happened, but to help people do better work together.</p>
+
+      <h2>A Possible Misread: "Working software" doesn't mean "no documentation"</h2>
+      <p>Agile gives us a useful prioritisation: working software over comprehensive documentation. Yet it's sometimes interpreted as "documentation is bad," which misses the point. Agile isn't anti-documentation—it's anti-documentation that doesn't serve delivery.</p>
+      <p>If a document replaces alignment instead of enabling it, the team slows down. But if it improves shared understanding and reduces avoidable rework, it becomes leverage—a tool in service of better outcomes.</p>
+
+      <h2>Documentation as a collaboration surface</h2>
+      <p>The most effective documentation works like a shared surface teams can think on together. It helps people align on:</p>
+      <ul>
+        <li><strong>Intent:</strong> What are we trying to achieve?</li>
+        <li><strong>Outcomes:</strong> What does "done" actually mean?</li>
+        <li><strong>Decisions:</strong> What did we choose, and why?</li>
+        <li><strong>Assumptions and constraints:</strong> What are we treating as true?</li>
+        <li><strong>Interfaces:</strong> Where do teams, systems, and processes touch?</li>
+      </ul>
+
+      <h2>The practical value: lower misalignment, faster flow</h2>
+      <p>Misalignment is expensive. It shows up as:</p>
+      <ul>
+        <li>rework that "shouldn't have happened"</li>
+        <li>repeated debates that feel like déjà vu</li>
+        <li>misunderstandings hidden behind polite agreement</li>
+        <li>handoffs that fail because context didn't travel</li>
+      </ul>
+      <p>A small amount of precise documentation—placed close to where the work happens—can prevent a disproportionate amount of downstream waste. This is why "lightweight, close-to-the-work" documentation often beats heavy documents that live far away from delivery.</p>
+
+      <h2>Documentation as a catalyst for learning and growth</h2>
+      <p>Beyond alignment, documentation can serve a deeper purpose: it helps teams learn faster. When teams capture not just what was decided, but why (trade-offs, rejected options, constraints), they build organisational memory. Over time, this becomes a quiet growth engine:</p>
+      <ul>
+        <li>new joiners ramp faster because context is accessible</li>
+        <li>repeated mistakes become visible patterns instead of recurring surprises</li>
+        <li>retrospectives become evidence-based instead of opinion-based</li>
+        <li>teams develop better judgment because decision history is legible</li>
+      </ul>
+      <p>In this way, documentation is not merely supportive—it becomes a capability builder.</p>
+
+      <h2>The reality check: context matters</h2>
+      <p>It's also important not to oversimplify. In certain contexts such as highly regulated environments—finance, healthcare, aviation, government, critical infrastructure—documentation may legitimately take significant effort. Traceability, auditability, controls, approvals, evidence of testing, risk assessments… these aren't "nice-to-haves." They're part of what makes the work safe and accountable.</p>
+      <p>So the goal isn't to minimise documentation for its own sake, but to see documentation in the context of the work being delivered:</p>
+      <ul>
+        <li>What risk are we managing?</li>
+        <li>What evidence is needed?</li>
+        <li>Who needs confidence, and what creates it?</li>
+        <li>What documentation genuinely reduces operational or compliance risk?</li>
+      </ul>
+      <p>In certain contexts, documentation is often part of the product's quality and readiness—not overhead.</p>
+
+      <h2>When documentation becomes a problem</h2>
+      <p>Documentation tends to become waste when it's created primarily to satisfy optics rather than outcomes. Some signals:</p>
+      <ul>
+        <li>it's produced late, after decisions are already made</li>
+        <li>it's too long to be used</li>
+        <li>it doesn't stay connected to delivery</li>
+        <li>people ask for it, but don't refer to it</li>
+        <li>it becomes a substitute for meaningful alignment</li>
+      </ul>
+      <p>That's when documentation becomes a parallel universe: "perfect on paper, drifting in reality."</p>
+
+      <h2>A simple decision filter</h2>
+      <p>When deciding what to document, I like to ask two questions:</p>
+      <ul>
+        <li>Who will use this?</li>
+        <li>What will it enable?</li>
+      </ul>
+      <p>If there's no clear user and no clear action, it may be documentation as comfort rather than documentation as leverage.</p>
+
+      <h2>What "right-sized" documentation looks like</h2>
+      <p>Right-sized documentation is usually:</p>
+      <ul>
+        <li><strong>purpose-driven</strong> (tied to a risk, decision, or outcome)</li>
+        <li><strong>minimal but precise</strong> (enough to align, not enough to drown)</li>
+        <li><strong>close to the work</strong> (linked to the backlog, increment, or release)</li>
+        <li><strong>maintainable</strong> (easy to update, not a one-time performance)</li>
+        <li><strong>usable</strong> (written for readers, not for theatre)</li>
+      </ul>
+
+      <div class="article-closing">
+        <p>The aim isn't "less documentation." The aim is documentation that amplifies collaboration and accelerates learning, while staying appropriate to the risk and regulatory context of the work.</p>
+        <br>
+        <p>Documentation isn't the product. It's leverage—when it helps people build the right thing, safely, together, and with increasing skill over time.</p>
+      </div>
+
+      <div class="article-substack-note">
+        Originally published on <a href="https://lionellam.substack.com/p/rethinking-the-role-of-documentation" target="_blank" rel="noopener noreferrer">Substack</a> as part of the <em>Constellations</em> series.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rethinking the Role of Artificial Intelligence in Requirements Lifecycle Management — Lionel Lam</title>
+  <link rel="canonical" href="https://lionellam.substack.com/p/rethinking-the-role-of-artificial" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <script src="../config.js"></script>
+  <script>
+    (function () {
+      const base = (typeof SITE_CONFIG !== 'undefined' ? SITE_CONFIG.theme : null) || 'gold';
+      const savedDark = localStorage.getItem('theme-dark');
+      const theme = savedDark === 'true' ? base + '-dark' : base;
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <style>
+    .article-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: none;
+      margin-bottom: 40px;
+    }
+    .article-back:hover { text-decoration: underline; }
+    .article-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    .article-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--heading);
+      line-height: 1.25;
+      margin: 0 0 8px;
+    }
+    .article-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin: 0 0 32px;
+      font-style: italic;
+    }
+    .article-rule {
+      border: none;
+      border-top: 2px solid var(--accent);
+      width: 40px;
+      margin: 0 0 32px;
+    }
+    .article-body h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--heading);
+      margin: 2em 0 0.5em;
+    }
+    .article-body p {
+      color: var(--text);
+      line-height: 1.75;
+      margin: 0 0 1.1em;
+    }
+    .article-body ul {
+      color: var(--text);
+      line-height: 1.75;
+      margin: 0 0 1.1em;
+      padding-left: 1.4em;
+    }
+    .article-body ul li { margin-bottom: 0.3em; }
+    .article-body ol {
+      color: var(--text);
+      line-height: 1.75;
+      margin: 0 0 1.1em;
+      padding-left: 1.4em;
+    }
+    .article-body ol li { margin-bottom: 0.3em; }
+    .article-substack-note {
+      margin-top: 48px;
+      padding: 16px 20px;
+      border-left: 3px solid var(--accent);
+      background: var(--white);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .article-substack-note a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="top-rule"></div>
+  <div class="article-wrap">
+    <a class="article-back" href="../index.html">← Back to CV</a>
+
+    <div class="article-meta">Lionel Lam &nbsp;·&nbsp; 17 January 2026 &nbsp;·&nbsp; Constellations</div>
+    <h1 class="article-title">Rethinking the Role of Artificial Intelligence in Requirements Lifecycle Management</h1>
+    <p class="article-subtitle">Shifting the paradigm: from "output" to "coherence"</p>
+    <hr class="article-rule" />
+
+    <div class="article-body">
+      <p>Artificial intelligence is increasingly recognized as an effective resource for enhancing productivity in areas such as writing, summarization, and workflow automation. However, within requirements management, the quality of results is contingent upon establishing well-defined objectives at the outset. Ambiguous intentions or requirements can cause teams to advance quickly but may ultimately result in unsuitable solutions, which can lead to quality concerns, extensive testing needs, and rework.</p>
+      <p>This article examines how AI can contribute to requirements management by consolidating requirements, generating documents suitable for review, and detecting potential issues early, all with the essential support of human oversight.</p>
+      <p>Given the current limitations of AI technology, it is recommended that readers carefully assess these approaches, consider peer input, and evaluate their own risk tolerance before adoption.</p>
+
+      <h2>The centrality of business analysis in requirements management</h2>
+      <p>Business analysis is upstream work, and upstream quality usually sets the ceiling for downstream delivery.</p>
+      <p>Much of what a team can deliver—and how confidently it can deliver it—is contingent on:</p>
+      <ul>
+        <li>how well intent is clarified early</li>
+        <li>how cleanly needs are translated into workable increments</li>
+        <li>how assumptions are surfaced before they harden into scope</li>
+        <li>how exceptions, edge cases, and constraints are handled upfront</li>
+        <li>how traceability holds as change happens</li>
+      </ul>
+      <p>When upstream work is strong, delivery feels smooth. When upstream work is weak, teams don't just "move slower"—they may spend cycles rebuilding understanding later. AI does not aim to be the silver bullet that can change this reality, but it can strengthen upstream quality by tightening the clarity and validation loops earlier.</p>
+
+      <h2>The problem of requirements drift</h2>
+      <p>A requirement starts as a conversation. Then it becomes meeting notes. Then a deck. Then user stories. Then acceptance criteria. Then a flow chart. Then test cases.</p>
+      <p>Somewhere along the way, the original intent gets rewritten so many times that the artefacts start disagreeing with one another. That's requirements drift—and it's one of the most costly (and possibly least visible) failure modes in delivery.</p>
+
+      <h2>The shift: From "writing assistant" to "requirements holder"</h2>
+      <p>A useful mental model is this:</p>
+      <ul>
+        <li><strong>Humans own the meaning:</strong> intent, constraints, trade-offs, exceptions, priorities.</li>
+        <li><strong>AI accelerates the coherence work:</strong> structuring, translating, cross-checking, and generating consistent artefacts.</li>
+        <li><strong>AI strengthens the interrogation loop:</strong> surfacing blind spots, hidden assumptions, and edge cases through stress-testing.</li>
+      </ul>
+      <p>Used this way, AI becomes less like "autofill", and more like a requirements workbench: a container, where fragmented ideas can be held, structured, challenged, and refined.</p>
+
+      <h2>The workflow: Keeping humans in the loop, always</h2>
+      <p>A proven pattern is to treat requirements as a baseline plus a coherent artefact set: capture intent → establish a baseline → generate artefacts → interrogate → validate → regenerate coherently.</p>
+      <p>So, putting this together, it's the discipline of:</p>
+      <ul>
+        <li>maintaining one "source of truth" baseline</li>
+        <li>using AI to generate consistent views from that baseline</li>
+        <li>using those outputs to accelerate stakeholder validation earlier</li>
+      </ul>
+
+      <h2>A practical approach: how AI can support the requirements lifecycle</h2>
+
+      <h2>1. Start with a baseline that AI can "hold"</h2>
+      <p>Instead of jumping straight to artefacts, start by building a structured baseline—a compact source of truth. This baseline typically includes:</p>
+      <ul>
+        <li>Definitions (terms, roles, key objects)</li>
+        <li>Rules and constraints ("must", "must not", validations, dependencies)</li>
+        <li>States and transitions (what statuses exist, when they change, what triggers them)</li>
+        <li>Exceptions and boundary conditions (what happens when something goes wrong)</li>
+      </ul>
+      <p>Once the baseline exists, AI can help hold the structure—keeping logic coherent as different representations are generated. Not because AI is authoritative, but because it is good at remembering structure, spotting inconsistencies, and expressing the same logic in multiple formats.</p>
+
+      <h2>2. Generate artefacts as a coherent set</h2>
+      <p>Requirements drift often happens because artefacts are produced separately, at different times, in different styles. A coherent artefact set derived from the same baseline may include:</p>
+      <ul>
+        <li>stakeholder-friendly summary (intent + outcomes)</li>
+        <li>user stories (actor → intent → value)</li>
+        <li>acceptance criteria (often Given/When/Then)</li>
+        <li>flow chart / activity flow (how it moves)</li>
+        <li>requirements deck structure (what to communicate, and in what sequence)</li>
+      </ul>
+      <p>The point isn't to produce more documentation. It's to keep all views aligned.</p>
+
+      <h2>3. Use personas to interrogate and stress-test requirements</h2>
+      <p>Many blind spots in requirements aren't technical—they're perspective gaps. Different stakeholders see different risks, incentives, and "gotchas." AI can help by interrogating requirements through persona lenses—not just job titles, but what each persona optimises for and how they behave under pressure. For example:</p>
+      <ul>
+        <li>a compliance-minded reviewer who is risk-averse and wants auditability</li>
+        <li>a rushed operator who needs speed and hates extra steps</li>
+        <li>a skeptical approver who assumes submissions are incomplete</li>
+        <li>a first-time user who doesn't know the "right" process</li>
+      </ul>
+      <p>AI-driven interrogation can surface missing rules, unclear definitions, unhandled exception paths, ambiguous transitions, and hidden needs stakeholders didn't articulate directly. This doesn't replace stakeholder engagement—it makes those conversations sharper and more productive.</p>
+
+      <h2>4. Run a consistency loop: find contradictions, drift, and omissions</h2>
+      <p>Once artefacts have been produced, AI can check them against each other. Common consistency checks include:</p>
+      <ul>
+        <li>Compare the acceptance criteria to the baseline rules—what is missing or inconsistent?</li>
+        <li>Does the flow cover every transition described in the rules?</li>
+        <li>Are terms used consistently across artefacts?</li>
+        <li>List assumptions that are implicit and should be explicit.</li>
+      </ul>
+      <p>This is also where AI can help maintain traceability relationships that are otherwise painful to keep current.</p>
+
+      <h2>5. Keep a baseline-first change discipline</h2>
+      <p>When requirements change (and they always do), the usual failure mode is patchwork updates. A baseline-first discipline is simple: update the baseline first, then regenerate downstream artefacts. AI makes this feasible without turning every change request into documentation chaos.</p>
+
+      <h2>Change impact tracking: an anti-drift mechanism</h2>
+      <p>An important risk associated with project delivery is not the original baseline itself, but rather the deviations introduced by ongoing changes. The issue does not lie in change per se; instead, it stems from the unmonitored consequences and ripple effects that may arise.</p>
+      <p>Used carefully, AI can help teams:</p>
+      <ul>
+        <li>differentiate and compare baseline versions, and surface what truly changed</li>
+        <li>infer which stories, acceptance criteria, and flows are likely impacted</li>
+        <li>highlight contradictions introduced by new constraints or changes</li>
+        <li>propose re-validation questions that are more specific and targeted</li>
+        <li>regenerate only what's impacted—or regenerate the full artefact set for safety and completeness</li>
+      </ul>
+      <p>It doesn't replace analysis, but it reduces the chance that change creates silent drift.</p>
+
+      <h2>Coherence across stakeholders: AI as a conflict surface</h2>
+      <p>Coherence isn't only a documentation problem. It's also an intent-balancing problem. In real delivery environments, there are competing needs: speed vs control, usability vs compliance, flexibility vs auditability, autonomy vs governance, simplicity vs exception-handling.</p>
+      <p>Where one stakeholder's needs conflict with another's, the system can sound coherent on paper while hiding tensions that only surface later—during build, UAT, or after release. AI can act as a conflict surface by helping to:</p>
+      <ul>
+        <li>identify potential stakeholder conflicts embedded in rules and flows</li>
+        <li>highlight trade-offs or assumptions being made implicitly (but not agreed or surfaced explicitly)</li>
+        <li>generate questions that must be answered before implementation proceeds</li>
+        <li>propose options and scenario variants so humans can choose deliberately</li>
+        <li>stress-test requirements through persona lenses to reveal hidden friction</li>
+      </ul>
+      <p>In that sense, AI tightens coherence not just between artefacts, but also across stakeholder intent.</p>
+
+      <h2>Improving agility: tighter feedback loops, lower cost of change</h2>
+      <p>The value is not "AI writes requirements." The value is that AI can tighten feedback loops in requirements management:</p>
+      <ul>
+        <li>faster generation of review surfaces</li>
+        <li>faster interrogation across stakeholder lenses</li>
+        <li>faster detection of contradictions and conflicts</li>
+        <li>faster impact analysis when change arrives</li>
+      </ul>
+      <p>That tighter loop promotes a more Agile posture (i.e. "shifting left") in the requirements space: move early, validate often, and reduce the cost of change.</p>
+
+      <h2>Keeping humans in the loop: AI as a validation accelerator</h2>
+      <p>One underappreciated benefit of AI-generated artefacts is that they pull review forward. When coherent artefacts can be produced quickly—stories, acceptance criteria, flows, deck outlines—stakeholders get something tangible to react to. Documentation becomes a review and collaboration surface:</p>
+      <ul>
+        <li>it makes assumptions visible</li>
+        <li>it forces ambiguity to show up as gaps</li>
+        <li>it gives stakeholders something concrete to correct</li>
+        <li>it anchors decisions so they don't dissolve after the meeting</li>
+      </ul>
+      <p>AI can draft. But humans validate. And the feedback loop gets tighter.</p>
+
+      <h2>Suggested guardrails</h2>
+      <p>AI, like most good things in life, can be a double-edged sword. AI can accelerate mistakes if it is treated as authoritative. Some guardrails are essential:</p>
+      <ul>
+        <li>one source of truth (baseline)</li>
+        <li>human judgement stays central</li>
+        <li>assumptions must be made explicit</li>
+        <li>use AI to challenge and interrogate, not to decide</li>
+        <li>validate with real stakeholders (keeping humans in the loop, always)</li>
+        <li>never ship requirements without review (quality gating)</li>
+      </ul>
+      <p>AI, however useful, can never be a replacement for thinking. It's a tool that supports thinking at scale.</p>
+
+      <h2>Conclusion</h2>
+      <p>The value of AI in requirements lifecycle management extends beyond enhancing the speed at which teams produce documentation. Its principal benefit lies in maintaining coherence among evolving artefacts such as baseline rules, user stories, acceptance criteria, and process flows, while proactively identifying gaps, inconsistencies, and potential stakeholder conflicts when adjustments remain cost-effective. When applied with care, AI can accelerate feedback cycles, reinforce validation processes, and minimize unnoticed deviations, all while ensuring that human judgement and stakeholder accountability remain central to decision-making.</p>
+      <p>It is essential to regard AI not as an ultimate authority but rather as a tool for improving coherence and critical analysis. By clarifying collaborative efforts, making decision points explicit, and bolstering delivery robustness, AI offers significant contributions—conditional on teams employing it with appropriate discipline, safeguards, and contextual awareness.</p>
+
+      <div class="article-substack-note">
+        Originally published on <a href="https://lionellam.substack.com/p/rethinking-the-role-of-artificial" target="_blank" rel="noopener noreferrer">Substack</a> as part of the <em>Constellations</em> series.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

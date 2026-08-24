@@ -1,5 +1,5 @@
 const RESUME_DATA = {
-  lastUpdated: "20 July 2026",
+  lastUpdated: "24 August 2026",
   profile: {
     name: "Lionel Lam Song Poh",
     jobTitle: "Independent Scholar",
@@ -169,8 +169,8 @@ const RESUME_DATA = {
     { name: "Google Cybersecurity Certificate", issuer: "Google", id: "RPOCHLB61H9J", badge: "img/badge-google-cybersecurity.png" }
   ],
   publications: [
-    { title: "Rethinking the Role of Artificial Intelligence in Requirements Lifecycle Management", date: "Jan 2026", link: "https://substack.com/home/post/p-184869025", bullets: ["Artificial intelligence is increasingly recognized as an effective resource for enhancing productivity in areas such as writing, summarization, and workflow automation. However, within requirements management, the quality of results is contingent upon establishing well-defined objectives at the outset.", "This article examines how AI can contribute to requirements management by consolidating requirements, generating documents suitable for review, and detecting potential issues early, all with the essential support of human oversight."] },
-    { title: "Rethinking the Role of Documentation", date: "Jan 2026", link: "https://substack.com/home/post/p-184867682", bullets: ["Documentation should not be treated as an output or proof of work, but as a tool for alignment and collaboration that helps teams clarify intent, decisions, and outcomes.", "The goal is not less documentation, but right-sized, purpose-driven documentation that supports execution, builds organisational learning, and fits the context."] }
+    { title: "Rethinking the Role of Artificial Intelligence in Requirements Lifecycle Management", date: "Jan 2026", link: "articles/rethinking-ai-requirements.html", bullets: ["Artificial intelligence is increasingly recognized as an effective resource for enhancing productivity in areas such as writing, summarization, and workflow automation. However, within requirements management, the quality of results is contingent upon establishing well-defined objectives at the outset.", "This article examines how AI can contribute to requirements management by consolidating requirements, generating documents suitable for review, and detecting potential issues early, all with the essential support of human oversight."] },
+    { title: "Rethinking the Role of Documentation", date: "Jan 2026", link: "articles/rethinking-documentation.html", bullets: ["Documentation should not be treated as an output or proof of work, but as a tool for alignment and collaboration that helps teams clarify intent, decisions, and outcomes.", "The goal is not less documentation, but right-sized, purpose-driven documentation that supports execution, builds organisational learning, and fits the context."] }
   ],
   education: [
     { period: "2025 – 2027 (Expected)", degree: "Master of Science in Project Management", school: "Nanyang Technological University (NTU), Singapore", logo: "img/logo-ntu.png" },
