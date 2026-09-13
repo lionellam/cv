@@ -217,15 +217,16 @@
       `).join('');
 
       // Resources
-      document.getElementById('resources-container').innerHTML = d.resources.map(r => `
-        <div class="employer-block">
-          <div class="pub-entry">
-            <div class="project-name">${r.title}</div>
-            <div class="project-period">${r.desc}</div>
-            <a class="pub-link" href="${r.file}" target="_blank" rel="noopener noreferrer">Download PDF →</a>
+      document.getElementById('resources-container').innerHTML = `<div class="resource-grid">${d.resources.map(r => `
+        <div class="resource-entry">
+          ${r.thumbnail ? `<img class="resource-thumb" src="${r.thumbnail}" alt="${r.title}">` : ''}
+          <div class="resource-body">
+            <div class="resource-title">${r.title}</div>
+            <div class="resource-desc-text">${r.desc}</div>
+            <a class="resource-download" href="${r.file}" target="_blank" rel="noopener noreferrer">Download PDF →</a>
           </div>
         </div>
-      `).join('');
+      `).join('')}</div>`;
 
       // Contributions
       document.getElementById('volunteer-container').innerHTML = d.volunteer.map(e => `
