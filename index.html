@@ -28,6 +28,7 @@
         <li><a href="#skills-header">Skills</a></li>
         <li><a href="#certifications-header">Certifications</a></li>
         <li><a href="#publications-header">Publications</a></li>
+        <li><a href="#resources-header">Resources</a></li>
         <li><a href="#volunteer-header">Contributions</a></li>
         <li><a href="#education-header">Education</a></li>
       </ul>
@@ -55,6 +56,7 @@
       <a href="#skills-header" onclick="this.parentElement.classList.remove('open')">Skills</a>
       <a href="#certifications-header" onclick="this.parentElement.classList.remove('open')">Certifications</a>
       <a href="#publications-header" onclick="this.parentElement.classList.remove('open')">Publications</a>
+      <a href="#resources-header" onclick="this.parentElement.classList.remove('open')">Resources</a>
       <a href="#volunteer-header" onclick="this.parentElement.classList.remove('open')">Contributions</a>
       <a href="#education-header" onclick="this.parentElement.classList.remove('open')">Education</a>
     </div>
@@ -111,6 +113,13 @@
         <h2 class="section-title">Publications</h2><div class="section-rule"></div>
       </div>
       <div id="pubs-container"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-header" id="resources-header">
+        <h2 class="section-title">Resources</h2><div class="section-rule"></div>
+      </div>
+      <div id="resources-container"></div>
     </section>
 
     <section class="section">
@@ -203,6 +212,17 @@
             <div class="project-period">${p.date}</div>
             <ul>${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
             <a class="pub-link" href="${p.link}" target="_blank" rel="noopener noreferrer">Read article →</a>
+          </div>
+        </div>
+      `).join('');
+
+      // Resources
+      document.getElementById('resources-container').innerHTML = d.resources.map(r => `
+        <div class="employer-block">
+          <div class="pub-entry">
+            <div class="project-name">${r.title}</div>
+            <div class="project-period">${r.desc}</div>
+            <a class="pub-link" href="${r.file}" target="_blank" rel="noopener noreferrer">Download PDF →</a>
           </div>
         </div>
       `).join('');
