@@ -86,8 +86,9 @@ h1 { font-size: clamp(1.5rem, 6vw, 3.2rem); font-weight: 700; color: var(--headi
 
 .resource-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .resource-entry { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; gap: 12px; background: var(--white); border: 1px solid var(--border-light); border-top: 4px solid var(--gold); box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-.resource-thumb { width: 100%; max-width: 160px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.10); object-fit: cover; }
-.resource-body { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.resource-thumb { width: 100%; max-width: 180px; height: 130px; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.10); object-fit: contain; }
+.resource-body { display: flex; flex-direction: column; gap: 8px; align-items: center; flex: 1; width: 100%; }
+.resource-download { margin-top: auto; }
 .resource-title { font-size: 14px; font-weight: 700; color: var(--heading-mid); line-height: 1.35; }
 .resource-desc-text { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
 .resource-download { display: inline-block; margin-top: 4px; padding: 7px 16px; background: var(--accent); color: #fff; font-size: 12px; font-weight: 600; text-decoration: none; border-radius: 4px; letter-spacing: 0.02em; }

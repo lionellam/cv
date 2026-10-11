@@ -1,5 +1,5 @@
 const RESUME_DATA = {
-  lastUpdated: "13 September 2026",
+  lastUpdated: "11 October 2026",
   profile: {
     name: "Lionel Lam Song Poh",
     jobTitle: "Independent Scholar",
@@ -174,7 +174,8 @@ const RESUME_DATA = {
     { title: "We Were Once Agile", date: "Sep 2026", link: "articles/we-were-once-agile.html", bullets: ["Agility is not a modern invention but a rediscovery — for most of human history, small, decentralized groups made decisions close to the ground; it was the rise of cities and institutions that introduced the layers of abstraction we now struggle to work around.", "Each layer of coordination we added to manage scale created distance: between decision and consequence, between metric and meaning, between the worker and the work. The real challenge of this inflection point is not just flattening hierarchies, but recovering contact with the particular, unrepeatable realities those abstractions were compressed from."] }
   ],
   resources: [
-    { title: "A High-level Guide to Structured Agility", desc: "A Systems-Level Guide to Consistency, Flow & Lean Practices", file: "files/structured-agility.pdf", thumbnail: "files/img/structured-agility.png" }
+    { title: "A High-level Guide to Structured Agility", desc: "A Systems-Level Guide to Consistency, Flow & Lean Practices", file: "files/structured-agility.pdf", thumbnail: "files/img/structured-agility.png" },
+    { title: "Structured Agility: Requirements Definition Template", desc: "A Systematic Approach to Agile Requirements Definition", file: "files/structured-agility-requirements-template.pdf", thumbnail: "files/img/structured-agility-requirements-template.png" }
   ],
   education: [
     { period: "2025 – 2027 (Expected)", degree: "Master of Science in Project Management", school: "Nanyang Technological University (NTU), Singapore", logo: "img/logo-ntu.png" },
