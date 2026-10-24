@@ -1,5 +1,5 @@
 const RESUME_DATA = {
-  lastUpdated: "11 October 2026",
+  lastUpdated: "24 October 2026",
   profile: {
     name: "Lionel Lam Song Poh",
     jobTitle: "Independent Scholar",
@@ -129,6 +129,7 @@ const RESUME_DATA = {
           title: "Volunteer Contributions",
           period: "2024 – Present<br>Singapore",
           bullets: [
+            "Mentor — CAPM Mentorship Program",
             "Academic Outreach Program",
             "Guest Speaker at Singapore Management University (PMI Meet & Greet Session)"
           ]
