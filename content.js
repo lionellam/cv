@@ -1,5 +1,5 @@
 const RESUME_DATA = {
-  lastUpdated: "24 October 2026",
+  lastUpdated: "26 October 2026",
   profile: {
     name: "Lionel Lam Song Poh",
     jobTitle: "Independent Scholar",
@@ -144,8 +144,9 @@ const RESUME_DATA = {
           title: "Open Source Project",
           period: "2026 – Present<br>Singapore",
           bullets: [
-            "Contributing to an open source, self-hosted expense tracker built for the community — powered by a Small Language Model (SLM) natural language interface.",
-            "Applying the CPMAI framework to validate the feasibility of cognitive project development in a real-world context."
+            "A small, open source experiment in natural language interfaces: logging expenses in plain language, with a cloud language model (Claude Haiku) structuring each entry and a human review step before saving.",
+            "Explores the trade-offs between locally-hosted and cloud-based language models, moving from a local proof of concept (Phi-4) to an invite-only web app.",
+            "Explores how the CPMAI framework applies in practice, keeping AI confined to one auditable task."
           ]
         }
       ]
