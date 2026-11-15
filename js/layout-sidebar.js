@@ -22,15 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.createElement('div');
   root.id = 'sidebar-root';
   root.innerHTML = `
-    <div class="sb-bar"><b>${d.profile.name}</b>
+    <div class="sb-bar">
+      <div class="sb-bar-icons">
+      <button id="sb-bar-theme" aria-label="Toggle light or dark mode"><svg class="sb-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="sb-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
       <button id="sb-menu" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
     </div>
     <div class="sb-scrim" id="sb-scrim"></div>
+    <!-- Phones only: back to the top, as in the classic layout -->
+    <button class="sb-top" id="sb-top" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg></button>
 
     <div class="sb-wrap">
     <aside class="sb-side">
       <button class="sb-close" id="sb-close" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-      <div>
+      <div class="sb-id">
         <div class="sb-title">${d.profile.jobTitle}</div>
         <h1>${d.profile.name}</h1>
         <div class="sb-post">${d.profile.postnominals}</div>
@@ -48,6 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
     </aside>
 
     <main class="sb-main">
+      <!-- Phones only: who this is and the CV download, which on wider screens are in the side menu -->
+      <div class="sb-mprofile">
+        <div class="sb-title">${d.profile.jobTitle}</div>
+        <div class="sb-mname">${d.profile.name}</div>
+        <div class="sb-post">${d.profile.postnominals}</div>
+        <ul class="sb-contacts">${d.profile.contacts.map((c) => `<li><a href="${c.link}">${c.label}</a></li>`).join('')}</ul>
+        <a class="sb-btn" href="files/lionellam-cv.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+      </div>
       <section id="summary" class="sb-summary"><h2 class="sb-heading">Summary</h2>${d.summary.map((p) => `<p>${p}</p>`).join('')}</section>
 
       <section id="experience"><h2 class="sb-heading">Experience</h2>
@@ -112,12 +125,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const isDark = () => document.documentElement.getAttribute('data-theme').endsWith('-dark');
   const label = document.getElementById('sb-theme-label');
   label.textContent = isDark() ? 'Light mode' : 'Dark mode';
-  document.getElementById('sb-theme').addEventListener('click', () => {
+  const toggleTheme = () => {
     const dark = !isDark();
     document.documentElement.setAttribute('data-theme', dark ? base + '-dark' : base);
     localStorage.setItem('theme-dark', dark ? 'true' : 'false');
     label.textContent = dark ? 'Light mode' : 'Dark mode';
-  });
+  };
+  // In the side menu on wider screens, and in the top bar on phones
+  document.getElementById('sb-theme').addEventListener('click', toggleTheme);
+  document.getElementById('sb-bar-theme').addEventListener('click', toggleTheme);
 
   // Menu on phones
   const close = () => document.body.classList.remove('sb-menu-open');
@@ -125,4 +141,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('sb-scrim').addEventListener('click', close);
   document.getElementById('sb-close').addEventListener('click', close);
   links.forEach((a) => a.addEventListener('click', close));
+
+  // Back to top on phones: appears once the reader has scrolled down a little
+  const toTop = document.getElementById('sb-top');
+  const showTop = () => toTop.classList.toggle('visible', window.scrollY > 300);
+  window.addEventListener('scroll', showTop, { passive: true });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  showTop();
 });

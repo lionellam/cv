@@ -317,7 +317,20 @@ const SITE_CONFIG = {
 };
 ```
 
-**Sidebar layout on wide screens:** the side menu and reading column form one centred block, at most 1,240px wide. On screens wider than 1,280px, where the block leaves a margin on each side, it has a hairline down each outer edge (`--border-light`, matching the line beside the menu) and a soft 32px shadow beyond it, so the column sits above the margins like a sheet of paper. The block runs the full height of the page, so only the left and right edges show the shadow. The shadow colour is set per theme (`--sb-shadow` in `css/layout-sidebar.css`): warm for gold, blue-grey for slate, neutral for paper, and a deeper black in dark mode, where it is much less visible. Narrower screens, tablets and phones have no edge lines or shadow.
+#### The sidebar layout in detail
+
+**Computers and tablets (wider than 900px):**
+- **Side menu** (pinned on the left while the page scrolls): job title, name, post-nominals, contact links, the list of sections, and at the bottom the **Download CV** button, the light/dark switch and "Last updated".
+- **Current section:** the section being read is marked in the menu with an accent bar. Choosing a section from the menu keeps it marked until the reader scrolls by hand, and at the very bottom of the page the last section (Education) is marked, since it can be too short to reach the reading position.
+- **Reading column:** one column of content, with a hairline after each section heading, and the © footer at the bottom, level with "Last updated" in the menu.
+- **Wide screens:** the side menu and reading column form one centred block, at most 1,240px wide. On screens wider than 1,280px, where the block leaves a margin on each side, it has a hairline down each outer edge (`--border-light`, matching the line beside the menu) and a soft 32px shadow beyond it, so the column sits above the margins like a sheet of paper. The block runs the full height of the page, so only the left and right edges show the shadow. The shadow colour is set per theme (`--sb-shadow` in `css/layout-sidebar.css`): warm for gold, blue-grey for slate, neutral for paper, and a deeper black in dark mode, where it is much less visible.
+
+**Phones and narrow windows (900px and narrower):**
+- **Top bar** (pinned at the top): the light/dark switch (a moon in light mode, a sun in dark mode, as in the classic layout) and the menu button, on the right. The name isn't shown in the bar.
+- **Profile at the top of the page**, centred: job title, name, post-nominals, contact links and the **Download CV** button, followed by Summary. On wider screens these are in the side menu instead.
+- **Slide-out menu:** opens from the left over the darkened page and holds only the list of sections (with the current one marked) and "Last updated" at the bottom. The name, profile, contacts, CV download and light/dark switch aren't repeated in it, as they're on the page and in the top bar. Tapping a section, the darkened page or the cross closes it.
+- **Back to top:** a round accent-coloured button with an up arrow, as in the classic layout, appears in the bottom-right corner once the reader has scrolled down 300px, and scrolls smoothly back to the top.
+- **Content:** two-column rows (dates beside entries, skill categories, education) stack into one column, and certifications go to one column. No edge lines or shadow.
 
 **Previewing without editing config:** on a local server only, add `?layout=sidebar` or `?layout=classic` to the address, for example `http://localhost:8080/?layout=sidebar`. This is ignored on the live site, so only `config.js` decides what visitors see.
 
@@ -346,6 +359,8 @@ Both layouts share the dark/light preference (`theme-dark` in `localStorage`), s
 ---
 
 ## 6. Layout & CSS
+
+This section describes the classic layout (`css/base.css`). The sidebar layout is described in Section 5.5.
 
 ### 6.1 Page width
 
@@ -393,11 +408,20 @@ On mobile (`≤768px`): switches to `flex-direction: column` with `gap: 8px`, so
 
 ## 7. Responsive Behaviour
 
+**Classic layout:**
+
 | Breakpoint | Changes |
 |---|---|
 | `≤900px` | Certifications grid goes from 4 columns to 2. Nav link padding narrows. |
 | `≤768px` | Header becomes single-column (name/contacts stack). Two-column layouts (skills, project rows, earlier career) collapse to single column. Nav links hide; hamburger menu appears. Footer stacks vertically. |
 | `≤480px` | Certifications grid collapses to 1 column. |
+
+**Sidebar layout** (details in Section 5.5):
+
+| Breakpoint | Changes |
+|---|---|
+| `>1280px` | Hairline down each outer edge of the centred block, with a soft shadow beyond it. |
+| `≤900px` | The side menu becomes a slide-out menu, opened from a top bar holding the light/dark switch and the menu button. A centred profile with **Download CV** appears at the top of the page. The back-to-top button appears after scrolling. Two-column rows and the certifications grid stack into one column. Summary paragraphs are left-aligned instead of justified. |
 
 ---
 
