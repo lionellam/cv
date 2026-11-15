@@ -207,7 +207,7 @@ certifications: [
 ]
 ```
 
-Displayed as a 4-column grid (2-column on tablet, 1-column on mobile). To add a certification: add the badge image to `img/`, then add a new object to this array.
+In the classic layout, displayed as a 4-column grid (2-column on tablet, 1-column on mobile) with 80px badges. In the sidebar layout, two per row (one on phones), each with a 56px badge beside its name, large enough for the badge lettering to be read. To add a certification: add the badge image to `img/`, then add a new object to this array.
 
 ---
 
@@ -322,8 +322,8 @@ const SITE_CONFIG = {
 **Computers and tablets (wider than 900px):**
 - **Side menu** (pinned on the left while the page scrolls): job title, name, post-nominals, contact links, the list of sections, and at the bottom the **Download CV** button, the light/dark switch and "Last updated".
 - **Current section:** the section being read is marked in the menu with an accent bar. Choosing a section from the menu keeps it marked until the reader scrolls by hand, and at the very bottom of the page the last section (Education) is marked, since it can be too short to reach the reading position.
-- **Reading column:** one column of content, with a hairline after each section heading, and the © footer at the bottom, level with "Last updated" in the menu.
-- **Wide screens:** the side menu and reading column form one centred block, at most 1,240px wide. On screens wider than 1,280px, where the block leaves a margin on each side, it has a hairline down each outer edge (`--border-light`, matching the line beside the menu) and a soft 32px shadow beyond it, so the column sits above the margins like a sheet of paper. The block runs the full height of the page, so only the left and right edges show the shadow. The shadow colour is set per theme (`--sb-shadow` in `css/layout-sidebar.css`): warm for gold, blue-grey for slate, neutral for paper, and a deeper black in dark mode, where it is much less visible.
+- **Reading column:** one column of content, with a hairline after each section heading, and the © footer at the bottom, level with "Last updated" in the menu. Certifications show two per row, with a 56px badge beside each name.
+- **Wide screens:** the side menu and reading column form one centred block, at most 1,240px wide. On screens wider than 1,280px, where the block leaves a margin on each side, it has a hairline down each outer edge (`--border-light`, matching the line beside the menu) and a soft 32px shadow beyond it, so the column sits above the margins like a sheet of paper. The block runs the full height of the page, and its shadow is clipped to the left and right sides. A copy of the column (background, outer lines, the line beside the menu and the shadow) is drawn on a layer fixed behind the page (`body::before`), lined up exactly with the block, so it can't be seen at rest. When a trackpad or phone pulls past the top or bottom of the page (rubber banding), the layer stays put and the column carries on into the pulled area instead of stopping abruptly. This relies on the browser keeping fixed elements still while rubber banding; a browser that doesn't simply shows the column ending, as before. The shadow colour is set per theme (`--sb-shadow` in `css/layout-sidebar.css`): warm for gold, blue-grey for slate, neutral for paper, and a deeper black in dark mode, where it is much less visible.
 
 **Phones and narrow windows (900px and narrower):**
 - **Top bar** (pinned at the top): the light/dark switch (a moon in light mode, a sun in dark mode, as in the classic layout) and the menu button, on the right. The name isn't shown in the bar.
@@ -420,7 +420,7 @@ On mobile (`≤768px`): switches to `flex-direction: column` with `gap: 8px`, so
 
 | Breakpoint | Changes |
 |---|---|
-| `>1280px` | Hairline down each outer edge of the centred block, with a soft shadow beyond it. |
+| `>1280px` | Hairline down each outer edge of the centred block, with a soft shadow beyond it, and the column continued on a fixed layer behind the page for rubber banding. |
 | `≤900px` | The side menu becomes a slide-out menu, opened from a top bar holding the light/dark switch and the menu button. A centred profile with **Download CV** appears at the top of the page. The back-to-top button appears after scrolling. Two-column rows and the certifications grid stack into one column. Summary paragraphs are left-aligned instead of justified. |
 
 ---
