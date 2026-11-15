@@ -6,7 +6,7 @@
   <title>Lionel Lam — Independent Scholar</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/theme.css" />
-  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/base.css" id="classic-css" />
   <script src="config.js"></script>
   <script>
     // Apply theme on load — respect saved dark/light preference, use config for base theme
@@ -16,6 +16,25 @@
       const theme = savedDark === 'true' ? base + '-dark' : base;
       document.documentElement.setAttribute('data-theme', theme);
     })();
+
+    // Choose the layout from config. On a local server, ?layout=classic or ?layout=sidebar previews one without editing config
+    window.SITE_LAYOUT = (function () {
+      const local = ['localhost', '127.0.0.1'].includes(location.hostname);
+      const asked = local ? new URLSearchParams(location.search).get('layout') : null;
+      const layout = asked || (typeof SITE_CONFIG !== 'undefined' ? SITE_CONFIG.layout : null) || 'classic';
+      return ['classic', 'sidebar'].includes(layout) ? layout : 'classic';
+    })();
+    if (window.SITE_LAYOUT === 'sidebar') {
+      document.getElementById('classic-css').disabled = true;
+      const css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'css/layout-sidebar.css';
+      document.head.appendChild(css);
+      // Hide the classic page shell straight away, before the sidebar layout is drawn
+      const hide = document.createElement('style');
+      hide.textContent = 'body > :not(#sidebar-root):not(script) { display: none !important; }';
+      document.head.appendChild(hide);
+    }
   </script>
 </head>
 <body>
@@ -148,6 +167,7 @@
   <!-- RENDER LOGIC -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      if (window.SITE_LAYOUT !== 'classic') return;
       const d = RESUME_DATA;
 
       // Header
@@ -281,5 +301,8 @@
       });
     });
   </script>
+
+  <!-- SIDEBAR LAYOUT (draws only when the sidebar layout is chosen) -->
+  <script src="js/layout-sidebar.js"></script>
 </body>
 </html>

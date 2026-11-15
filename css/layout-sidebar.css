@@ -1,0 +1,113 @@
+/* ============================================================
+   LAYOUT: SIDEBAR — minimal, single reading column with a side menu.
+   Loaded instead of base.css when config.js sets layout: "sidebar".
+   Colours come from theme.css, so every theme and dark mode apply.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 15.5px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:root { --sb-width: 340px; --sb-main-width: 900px; }
+
+/* Side menu and reading column sit together in one centred block; wide screens get even margins */
+.sb-wrap { display: flex; align-items: flex-start; max-width: calc(var(--sb-width) + var(--sb-main-width)); margin: 0 auto; }
+
+/* Side menu */
+.sb-side { position: sticky; top: 0; height: 100vh; flex-shrink: 0; width: var(--sb-width); padding: 48px 36px 28px; display: flex; flex-direction: column; gap: 28px;
+           border-right: 1px solid var(--border-light); background: var(--bg); overflow-y: auto; z-index: 20; }
+.sb-title { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.sb-side h1 { font-size: 26px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: var(--heading); margin-top: 8px; }
+.sb-post { font-size: 12.5px; color: var(--text-muted); margin-top: 8px; }
+.sb-contacts { list-style: none; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+.sb-contacts a { color: var(--text-mid); text-decoration: none; }
+.sb-contacts a:hover { color: var(--accent); }
+.sb-nav ul { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+.sb-nav a { display: block; padding: 6px 10px; margin-left: -10px; border-left: 2px solid transparent; font-size: 13.5px; color: var(--text-muted); text-decoration: none; transition: color .15s, border-color .15s; }
+.sb-nav a:hover { color: var(--heading); }
+.sb-nav a.active { color: var(--heading); font-weight: 600; border-left-color: var(--accent); }
+.sb-foot { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+.sb-btn { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); text-decoration: none; border: 1px solid var(--accent); border-radius: 4px; padding: 7px 12px; text-align: center; }
+.sb-btn:hover { background: var(--accent); color: var(--bg); }
+.sb-toggle { display: inline-flex; align-items: center; gap: 8px; background: none; border: none; cursor: pointer; color: var(--text-muted); font: inherit; font-size: 12.5px; padding: 0; }
+.sb-toggle:hover { color: var(--heading); }
+.sb-toggle svg { width: 16px; height: 16px; }
+.sb-updated { font-size: 11.5px; color: var(--text-faint); }
+
+/* Reading column */
+.sb-main { flex: 1; min-width: 0; padding: 56px 64px 96px; max-width: var(--sb-main-width); }
+.sb-main section { padding: 8px 0 48px; scroll-margin-top: 32px; }
+.sb-label { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 22px; }
+.sb-summary p { color: var(--text-mid); margin-bottom: 16px; }
+/* Section headings: clear but quiet, with a hairline that runs to the edge of the column */
+.sb-heading { display: flex; align-items: center; gap: 16px; font-size: 20px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; color: var(--heading); margin-bottom: 24px; }
+.sb-heading::after { content: ''; flex: 1; height: 1px; background: var(--border-light); }
+
+.sb-entry { display: grid; grid-template-columns: 170px 1fr; gap: 4px 28px; padding: 18px 0; border-top: 1px solid var(--border-light); }
+.sb-entry:first-of-type { border-top: none; padding-top: 0; }
+.sb-when { font-size: 12.5px; color: var(--text-faint); line-height: 1.6; }
+.sb-org { font-size: 15.5px; font-weight: 600; color: var(--heading); }
+.sb-role { font-size: 13px; color: var(--accent); margin-bottom: 4px; }
+.sb-proj { font-size: 14.5px; font-weight: 600; color: var(--heading-mid); margin-top: 6px; }
+.sb-bullets { list-style: none; margin-top: 6px; }
+.sb-bullets li { position: relative; padding-left: 16px; color: var(--text-mid); font-size: 14.5px; margin-bottom: 6px; }
+.sb-bullets li::before { content: ''; position: absolute; left: 0; top: .78em; width: 5px; height: 1px; background: var(--text-faint); }
+.sb-earlier { list-style: none; }
+.sb-earlier li { display: grid; grid-template-columns: 170px 1fr; gap: 0 28px; padding: 10px 0; border-top: 1px solid var(--border-light); font-size: 14px; color: var(--text-mid); }
+.sb-earlier li b { color: var(--heading-mid); font-weight: 600; font-size: 13px; }
+
+.sb-skills { display: grid; grid-template-columns: 170px 1fr; gap: 14px 28px; }
+.sb-cat { font-size: 12.5px; color: var(--text-faint); padding-top: 2px; }
+.sb-tags { font-size: 14.5px; color: var(--text-mid); }
+
+.sb-certs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 28px; }
+.sb-cert { display: flex; gap: 12px; align-items: center; }
+.sb-cert img { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
+[data-theme$="-dark"] .sb-cert img, [data-theme$="-dark"] .sb-edu img { background: rgba(255,255,255,.92); border-radius: 6px; padding: 3px; }
+.sb-cert-name { font-size: 13.5px; font-weight: 600; color: var(--heading-mid); line-height: 1.35; }
+.sb-cert-issuer { font-size: 12px; color: var(--text-faint); }
+
+.sb-pub-title { font-size: 15px; font-weight: 600; color: var(--heading); text-decoration: none; }
+.sb-pub-title:hover { color: var(--accent); }
+.sb-more { display: inline-block; margin-top: 4px; font-size: 13px; color: var(--accent); text-decoration: none; }
+.sb-more:hover { text-decoration: underline; }
+
+.sb-res { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center; padding: 16px 0; border-top: 1px solid var(--border-light); }
+.sb-res:first-of-type { border-top: none; padding-top: 0; }
+.sb-res img { width: 96px; border-radius: 4px; border: 1px solid var(--border-light); }
+.sb-res-desc { font-size: 13.5px; color: var(--text-muted); }
+
+.sb-edu { display: grid; grid-template-columns: 170px 1fr auto; gap: 0 28px; align-items: center; padding: 14px 0; border-top: 1px solid var(--border-light); }
+.sb-edu:first-of-type { border-top: none; padding-top: 0; }
+.sb-edu img { height: 40px; width: 100px; object-fit: contain; opacity: .85; }
+.sb-school { font-size: 13.5px; color: var(--text-muted); }
+
+.sb-footer { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-light); font-size: 12px; color: var(--text-faint); }
+
+/* Phones and narrow windows: a top bar with a slide-out menu */
+.sb-bar, .sb-close { display: none; }
+.sb-close { position: absolute; top: 14px; right: 14px; width: 32px; height: 32px; place-items: center; background: none; border: none; cursor: pointer; color: var(--text-muted); }
+.sb-close:hover { color: var(--heading); }
+/* Summary paragraphs are justified on wider screens; bullets and phones stay left-aligned */
+@media (min-width: 901px) { .sb-summary p { text-align: justify; } }
+
+@media (max-width: 900px) {
+  .sb-bar { display: flex; position: sticky; top: 0; z-index: 30; align-items: center; justify-content: space-between; padding: 14px 20px;
+            background: var(--bg-glass); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-light); }
+  .sb-bar b { font-size: 15px; color: var(--heading); }
+  .sb-bar button { background: none; border: none; cursor: pointer; color: var(--heading); width: 32px; height: 32px; display: grid; place-items: center; }
+  .sb-wrap { display: block; }
+  .sb-side { position: fixed; inset: 0 auto 0 0; height: auto; transform: translateX(-100%); transition: transform .25s ease; width: 88%; max-width: var(--sb-width); box-shadow: 0 0 40px rgba(0,0,0,.18); z-index: 50; padding-top: 56px; }
+  body.sb-menu-open .sb-side { transform: none; }
+  .sb-close { display: grid; }
+  .sb-scrim { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 45; }
+  body.sb-menu-open .sb-scrim { display: block; }
+  .sb-main { padding: 32px 22px 72px; }
+  /* Leave room for the pinned top bar (61px) when jumping to a section */
+  .sb-main section { scroll-margin-top: 80px; }
+  .sb-entry, .sb-earlier li, .sb-skills { grid-template-columns: 1fr; }
+  /* Stack years, then degree and school, then the logo */
+  .sb-edu { grid-template-columns: 1fr; gap: 4px; justify-items: start; padding: 18px 0; }
+  .sb-edu img { margin-top: 8px; }
+  .sb-certs { grid-template-columns: 1fr; }
+}

@@ -38,10 +38,13 @@ A single-page, static CV website. No frameworks, no build tools, no server-side 
 Project-CV/
 ├── index.html          # The page shell — containers and render script
 ├── content.js          # All CV content (the only file you normally edit)
-├── config.js           # Site configuration (active theme)
+├── config.js           # Site configuration (active theme and layout)
 ├── css/
 │   ├── theme.css       # Colour tokens for all themes (light + dark variants)
-│   └── base.css        # Layout, typography, component styles
+│   ├── base.css        # Classic layout: layout, typography, component styles
+│   └── layout-sidebar.css  # Sidebar layout styles (used instead of base.css)
+├── js/
+│   └── layout-sidebar.js   # Draws the sidebar layout from content.js
 ├── files/
 │   └── lionellam-cv.pdf    # Downloadable CV PDF
 ├── img/
@@ -296,7 +299,29 @@ The moon/sun button in the nav toggles between the base theme and its `-dark` va
 
 The logic: on load, `config.js` sets the base theme; `localStorage` determines whether to append `-dark`.
 
-### 5.5 CSS token reference
+### 5.5 Choosing a layout
+
+The site has two layouts, both drawn from the same `content.js` and theme colours:
+
+| Layout | Character | Files |
+|---|---|---|
+| `classic` | The original layout: top navigation bar, cards and badges | `base.css` and the render script in `index.html` |
+| `sidebar` | Minimal: a fixed side menu (a top bar with a slide-out menu on phones) and one reading column | `css/layout-sidebar.css` and `js/layout-sidebar.js` |
+
+Edit `config.js`:
+
+```js
+const SITE_CONFIG = {
+  theme: "gold",
+  layout: "classic"   // Change to "sidebar"
+};
+```
+
+**Previewing without editing config:** on a local server only, add `?layout=sidebar` or `?layout=classic` to the address, for example `http://localhost:8080/?layout=sidebar`. This is ignored on the live site, so only `config.js` decides what visitors see.
+
+Both layouts share the dark/light preference (`theme-dark` in `localStorage`), so switching layouts keeps the visitor's choice.
+
+### 5.6 CSS token reference
 
 | Token | Purpose |
 |---|---|
