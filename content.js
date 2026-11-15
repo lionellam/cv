@@ -144,8 +144,8 @@ const RESUME_DATA = {
           title: "Open Source Project",
           period: "2026 – Present<br>Singapore",
           bullets: [
-            "An open source, invite-only expense tracker, live since November 2026: expenses are logged in plain language, a cloud language model (Claude Haiku) structures each entry, and every field is reviewed before anything is saved.",
-            "Evolved from a local proof of concept (Phi-4) to a hosted web app, weighing locally-hosted against cloud-based language models on privacy, reliability, speed and cost, with model spending capped at US$5 a month.",
+            "An open source, AI-augmented expense tracker: expenses are logged in plain language, and parsed by a large language model (Claude Haiku) in the cloud.",
+            "Evolved from a local proof of concept (using Phi-4) to a cloud-hosted web app, weighing locally-hosted against cloud-based language models on privacy, reliability, performance and cost.",
             "Applies the CPMAI framework in practice: AI is confined to one auditable task, the original text is kept with every entry, and each user correction is recorded as a signal of parsing accuracy.",
             "Delivered with lightweight project discipline: a decision record, specification and test plan updated before each change, design mockups before building, and semantic-versioned releases verified on a phone after each deploy.",
             "Uses AI-assisted requirements and specification work (Claude Code) with built-in traceability: the code cites the specification sections and decisions it implements, and each reviewed release ties its changelog, Git tag and document versions together."
