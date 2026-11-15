@@ -35,7 +35,7 @@ a { color: inherit; }
 .sb-updated { font-size: 11.5px; color: var(--text-faint); }
 
 /* Reading column */
-.sb-main { flex: 1; min-width: 0; padding: 56px 64px 96px; max-width: var(--sb-main-width); }
+.sb-main { flex: 1; min-width: 0; padding: 56px 64px 0; max-width: var(--sb-main-width); min-height: 100vh; display: flex; flex-direction: column; }
 .sb-main section { padding: 8px 0 48px; scroll-margin-top: 32px; }
 .sb-label { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 22px; }
 .sb-summary p { color: var(--text-mid); margin-bottom: 16px; }
@@ -82,7 +82,8 @@ a { color: inherit; }
 .sb-edu img { height: 40px; width: 100px; object-fit: contain; opacity: .85; }
 .sb-school { font-size: 13.5px; color: var(--text-muted); }
 
-.sb-footer { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border-light); font-size: 12px; color: var(--text-faint); }
+/* Sits at the bottom of the screen at the end of the page, level with "Last updated" in the side menu */
+.sb-footer { margin-top: auto; padding: 20px 0 24px; border-top: 1px solid var(--border-light); font-size: 12px; color: var(--text-faint); }
 
 /* Phones and narrow windows: a top bar with a slide-out menu */
 .sb-bar, .sb-close { display: none; }
@@ -102,7 +103,7 @@ a { color: inherit; }
   .sb-close { display: grid; }
   .sb-scrim { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 45; }
   body.sb-menu-open .sb-scrim { display: block; }
-  .sb-main { padding: 32px 22px 72px; }
+  .sb-main { padding: 32px 22px 0; }
   /* Leave room for the pinned top bar (61px) when jumping to a section */
   .sb-main section { scroll-margin-top: 80px; }
   .sb-entry, .sb-earlier li, .sb-skills { grid-template-columns: 1fr; }

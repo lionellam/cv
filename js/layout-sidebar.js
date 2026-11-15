@@ -90,13 +90,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Highlight the section being read
   const links = [...root.querySelectorAll('.sb-nav a')];
+  const lastId = sections[sections.length - 1][0];
+  let reading = sections[0][0];
+  let chosen = null; // a section picked from the menu, kept until the reader scrolls by hand
+  const show = (id) => links.forEach((a) => a.classList.toggle('active', a.dataset.id === id));
+  // The last section can be too short to reach the reading band, so the bottom of the page counts as it
+  const atBottom = () => window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+  const update = () => show(chosen ?? (atBottom() ? lastId : reading));
   const spy = new IntersectionObserver((entries) => {
-    entries.forEach((en) => {
-      if (en.isIntersecting) links.forEach((a) => a.classList.toggle('active', a.dataset.id === en.target.id));
-    });
+    entries.forEach((en) => { if (en.isIntersecting) reading = en.target.id; });
+    update();
   }, { rootMargin: '-30% 0px -65% 0px' });
   sections.forEach(([id]) => spy.observe(document.getElementById(id)));
-  links[0].classList.add('active');
+  window.addEventListener('scroll', update, { passive: true });
+  links.forEach((a) => a.addEventListener('click', () => { chosen = a.dataset.id; update(); }));
+  ['wheel', 'touchmove', 'keydown'].forEach((ev) => window.addEventListener(ev, () => { chosen = null; }, { passive: true }));
+  update();
 
   // Light / dark: the same saved preference as the classic layout
   const base = (typeof SITE_CONFIG !== 'undefined' ? SITE_CONFIG.theme : null) || 'gold';
