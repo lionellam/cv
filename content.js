@@ -1,5 +1,5 @@
 const RESUME_DATA = {
-  lastUpdated: "26 October 2026",
+  lastUpdated: "15 November 2026",
   profile: {
     name: "Lionel Lam Song Poh",
     jobTitle: "Independent Scholar",
@@ -144,9 +144,11 @@ const RESUME_DATA = {
           title: "Open Source Project",
           period: "2026 – Present<br>Singapore",
           bullets: [
-            "A small, open source experiment in natural language interfaces: logging expenses in plain language, with a cloud language model (Claude Haiku) structuring each entry and a human review step before saving.",
-            "Explores the trade-offs between locally-hosted and cloud-based language models, moving from a local proof of concept (Phi-4) to an invite-only web app.",
-            "Explores how the CPMAI framework applies in practice, keeping AI confined to one auditable task."
+            "An open source, invite-only expense tracker, live since November 2026: expenses are logged in plain language, a cloud language model (Claude Haiku) structures each entry, and every field is reviewed before anything is saved.",
+            "Evolved from a local proof of concept (Phi-4) to a hosted web app, weighing locally-hosted against cloud-based language models on privacy, reliability, speed and cost, with model spending capped at US$5 a month.",
+            "Applies the CPMAI framework in practice: AI is confined to one auditable task, the original text is kept with every entry, and each user correction is recorded as a signal of parsing accuracy.",
+            "Delivered with lightweight project discipline: a decision record, specification and test plan updated before each change, design mockups before building, and semantic-versioned releases verified on a phone after each deploy.",
+            "Uses AI-assisted requirements and specification work (Claude Code) with built-in traceability: the code cites the specification sections and decisions it implements, and each reviewed release ties its changelog, Git tag and document versions together."
           ]
         }
       ]
