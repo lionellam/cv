@@ -53,13 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
     </aside>
 
     <main class="sb-main">
-      <!-- Phones only: who this is and the CV download, which on wider screens are in the side menu -->
+      <!-- Phones only: who this is, at the top of the page. Contacts and the CV download are in the menu -->
       <div class="sb-mprofile">
         <div class="sb-title">${d.profile.jobTitle}</div>
         <div class="sb-mname">${d.profile.name}</div>
         <div class="sb-post">${d.profile.postnominals}</div>
-        <ul class="sb-contacts">${d.profile.contacts.map((c) => `<li><a href="${c.link}">${c.label}</a></li>`).join('')}</ul>
-        <a class="sb-btn" href="files/lionellam-cv.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
       </div>
       <section id="summary" class="sb-summary"><h2 class="sb-heading">Summary</h2>${d.summary.map((p) => `<p>${p}</p>`).join('')}</section>
 
@@ -117,6 +115,16 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach(([id]) => spy.observe(document.getElementById(id)));
   window.addEventListener('scroll', update, { passive: true });
   links.forEach((a) => a.addEventListener('click', () => { chosen = a.dataset.id; update(); }));
+  // Summary is the first section, so choosing it goes right to the top of the page (on phones, back above the
+  // profile), rather than to the Summary heading. The same applies when the page is opened at #summary
+  const first = sections[0][0];
+  const firstLink = links.find((a) => a.dataset.id === first);
+  firstLink.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (location.hash !== '#' + first) history.pushState(null, '', '#' + first);
+  });
+  if (location.hash === '#' + first) window.scrollTo(0, 0);
   ['wheel', 'touchmove', 'keydown'].forEach((ev) => window.addEventListener(ev, () => { chosen = null; }, { passive: true }));
   update();
 

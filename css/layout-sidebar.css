@@ -68,8 +68,9 @@ a { color: inherit; }
 .sb-role { font-size: 13px; color: var(--accent); margin-bottom: 4px; }
 .sb-proj { font-size: 14.5px; font-weight: 600; color: var(--heading-mid); margin-top: 6px; }
 .sb-bullets { list-style: none; margin-top: 6px; }
-.sb-bullets li { position: relative; padding-left: 16px; color: var(--text-mid); font-size: 14.5px; margin-bottom: 6px; }
-.sb-bullets li::before { content: ''; position: absolute; left: 0; top: .78em; width: 5px; height: 1px; background: var(--text-faint); }
+/* The classic layout's gold dot, at the sidebar's slightly smaller text size */
+.sb-bullets li { position: relative; padding-left: 18px; color: var(--text-mid); font-size: 14.5px; margin-bottom: 10px; }
+.sb-bullets li::before { content: '•'; position: absolute; left: 0; color: var(--accent-light); font-weight: 700; }
 .sb-earlier { list-style: none; }
 .sb-earlier li { display: grid; grid-template-columns: 170px 1fr; gap: 0 28px; padding: 10px 0; border-top: 1px solid var(--border-light); font-size: 14px; color: var(--text-mid); }
 .sb-earlier li b { color: var(--heading-mid); font-weight: 600; font-size: 13px; }
@@ -120,16 +121,13 @@ a { color: inherit; }
   #sb-bar-theme svg { width: 19px; height: 19px; }
   #sb-bar-theme .sb-sun, [data-theme$="-dark"] #sb-bar-theme .sb-moon { display: none; }
   [data-theme$="-dark"] #sb-bar-theme .sb-sun { display: block; }
-  /* Profile and CV download at the top of the page */
+  /* Profile at the top of the page: title, name and post-nominals */
   .sb-mprofile { display: block; margin-bottom: 36px; text-align: center; }
-  .sb-mprofile .sb-contacts { align-items: center; }
   .sb-mname { font-size: 24px; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; color: var(--heading); margin-top: 6px; }
   .sb-mprofile .sb-post { margin-top: 6px; }
-  .sb-mprofile .sb-contacts { margin-top: 12px; }
-  .sb-mprofile .sb-btn { margin-top: 16px; }
-  /* The menu is for getting around: the sections and Last updated. The name, profile, contacts, CV download
-     and light / dark switch are on the page and in the top bar instead */
-  .sb-side .sb-id, .sb-side .sb-contacts, .sb-side .sb-btn, .sb-side .sb-toggle { display: none; }
+  /* The menu keeps the profile, contacts and CV download, left-aligned as on wider screens, as well as being at the
+     top of the page. Only the light / dark switch is left out, as it's in the top bar */
+  .sb-side .sb-toggle { display: none; }
   .sb-wrap { display: block; }
   .sb-side { position: fixed; inset: 0 auto 0 0; height: auto; transform: translateX(-100%); transition: transform .25s ease; width: 88%; max-width: var(--sb-width); box-shadow: 0 0 40px rgba(0,0,0,.18); z-index: 50; padding-top: 56px; }
   body.sb-menu-open .sb-side { transform: none; }
