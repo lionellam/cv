@@ -146,7 +146,7 @@ const RESUME_DATA = {
           bullets: [
             "An open source, AI-augmented expense tracker: expenses are logged in plain language, and parsed by a large language model (Claude Haiku) in the cloud.",
             "Evolved from a local proof of concept (using Phi-4) to a cloud-hosted web app, weighing locally-hosted against cloud-based language models on privacy, reliability, performance and cost.",
-            "Applies the CPMAI framework in practice: AI is confined to one auditable task, the original text is kept with every entry, and each user correction is recorded as a signal of parsing accuracy.",
+            "Applies the CPMAI framework in practice: a clear separation between cognitive (AI) and deterministic components keeps the system predictable, trustworthy and auditable, with the user kept in the loop to review every entry before it is saved.",
             "Delivered with lightweight project discipline: a decision record, specification and test plan updated before each change, design mockups before building, and semantic-versioned releases verified on a phone after each deploy.",
             "Uses AI-assisted requirements and specification work (Claude Code) with built-in traceability: the code cites the specification sections and decisions it implements, and each reviewed release ties its changelog, Git tag and document versions together."
           ]
