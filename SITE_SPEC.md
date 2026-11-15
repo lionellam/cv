@@ -317,6 +317,8 @@ const SITE_CONFIG = {
 };
 ```
 
+**Sidebar layout on wide screens:** the side menu and reading column form one centred block, at most 1,240px wide. On screens wider than 1,280px, where the block leaves a margin on each side, it has a hairline down each outer edge (`--border-light`, matching the line beside the menu) and a soft 32px shadow beyond it, so the column sits above the margins like a sheet of paper. The block runs the full height of the page, so only the left and right edges show the shadow. The shadow colour is set per theme (`--sb-shadow` in `css/layout-sidebar.css`): warm for gold, blue-grey for slate, neutral for paper, and a deeper black in dark mode, where it is much less visible. Narrower screens, tablets and phones have no edge lines or shadow.
+
 **Previewing without editing config:** on a local server only, add `?layout=sidebar` or `?layout=classic` to the address, for example `http://localhost:8080/?layout=sidebar`. This is ignored on the live site, so only `config.js` decides what visitors see.
 
 Both layouts share the dark/light preference (`theme-dark` in `localStorage`), so switching layouts keeps the visitor's choice.

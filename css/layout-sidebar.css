@@ -13,6 +13,17 @@ a { color: inherit; }
 /* Side menu and reading column sit together in one centred block; wide screens get even margins */
 .sb-wrap { display: flex; align-items: flex-start; max-width: calc(var(--sb-width) + var(--sb-main-width)); margin: 0 auto; }
 
+/* Wide screens, where the block leaves a margin on each side: a hairline down each outer edge and a soft shadow
+   beyond it, so the column sits above the margins like a sheet of paper. The block runs the full height of the
+   page, so only the left and right edges show the shadow. The shadow is tinted to suit each theme */
+:root, [data-theme="gold"] { --sb-shadow: rgba(60, 45, 20, .10); }
+[data-theme="slate"] { --sb-shadow: rgba(15, 23, 42, .10); }
+[data-theme="paper"] { --sb-shadow: rgba(0, 0, 0, .08); }
+[data-theme$="-dark"] { --sb-shadow: rgba(0, 0, 0, .55); }
+@media (min-width: 1281px) {
+  .sb-wrap { min-height: 100vh; border-left: 1px solid var(--border-light); border-right: 1px solid var(--border-light); box-shadow: 0 0 32px var(--sb-shadow); }
+}
+
 /* Side menu */
 .sb-side { position: sticky; top: 0; height: 100vh; flex-shrink: 0; width: var(--sb-width); padding: 48px 36px 28px; display: flex; flex-direction: column; gap: 28px;
            border-right: 1px solid var(--border-light); background: var(--bg); overflow-y: auto; z-index: 20; }
