@@ -10,7 +10,6 @@ const READING = (() => {
   // Finished items, newest first ("finished" is "YYYY-MM")
   const finished = () => list().filter((r) => !isNow(r)).sort((a, b) => String(b.finished ?? '').localeCompare(String(a.finished ?? '')));
   const now = () => list().filter(isNow);
-  const year = (r) => (r.finished ? Number(String(r.finished).slice(0, 4)) : null);
   // "2026-10" → "Oct 2026"
   const month = (ym) => {
     const [y, m] = String(ym ?? '').split('-').map(Number);
@@ -29,5 +28,5 @@ const READING = (() => {
       ? `<div class="rl-cover rl-drawn journal" style="background:${bg}" aria-hidden="true"><div class="cj">Journal</div><div class="ct">${r.title}</div><div class="ca">${r.author ?? ''}</div></div>`
       : `<div class="rl-cover rl-drawn" style="background:${bg}" aria-hidden="true"><div class="ct">${r.title}</div><div class="ca">${r.author ?? ''}</div></div>`;
   };
-  return { list, now, finished, year, month, cover };
+  return { list, now, finished, month, cover };
 })();
