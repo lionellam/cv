@@ -1,5 +1,5 @@
 const RESUME_DATA = {
-  lastUpdated: "15 November 2026",
+  lastUpdated: "22 November 2026",
   profile: {
     name: "Lionel Lam Song Poh",
     jobTitle: "Independent Scholar",
@@ -180,6 +180,14 @@ const RESUME_DATA = {
   resources: [
     { title: "A High-level Guide to Structured Agility", desc: "A Systems-Level Guide to Consistency, Flow & Lean Practices", file: "files/structured-agility.pdf", thumbnail: "files/img/structured-agility.png" },
     { title: "Structured Agility: Requirements Definition Template", desc: "A Systematic Approach to Agile Requirements Definition", file: "files/structured-agility-requirements-template.pdf", thumbnail: "files/img/structured-agility-requirements-template.png" }
+  ],
+  // Reading list: shown on the CV (everything being read now, and the four most recently finished) and in full on reading.html.
+  // The section stays hidden while this list is empty. Each entry:
+  //   { title: "…", author: "…", type: "Book" or "Journal", status: "reading" or "read",
+  //     finished: "YYYY-MM" (when read), link: "https://…" (optional, makes the title a link on reading.html),
+  //     cover: "img/reading/file.jpg" (optional; without it a cover is drawn from the title) }
+  readingList: [
+    { title: "From Foresight to Action: Your Strategic Decision-Making Playbook", author: "Joana Lenkova", type: "Book", status: "reading", cover: "img/reading/from-foresight-to-action.jpg" }
   ],
   education: [
     { period: "2025 – 2027 (Expected)", degree: "Master of Science in Project Management", school: "Nanyang Technological University (NTU), Singapore", logo: "img/logo-ntu.png" },

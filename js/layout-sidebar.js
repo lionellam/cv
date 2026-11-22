@@ -4,10 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.SITE_LAYOUT !== 'sidebar') return;
   const d = RESUME_DATA;
   const bullets = (list) => `<ul class="sb-bullets">${list.map((b) => `<li>${b}</li>`).join('')}</ul>`;
+  // The Reading list section and its menu item appear only once content.js has entries in readingList
+  const hasReading = typeof READING !== 'undefined' && READING.list().length > 0;
   const sections = [
     ['summary', 'Summary'], ['experience', 'Experience'], ['skills', 'Skills'], ['certifications', 'Certifications'],
-    ['publications', 'Publications'], ['resources', 'Resources'], ['contributions', 'Contributions'], ['education', 'Education'],
-  ];
+    ['publications', 'Publications'], ['resources', 'Resources'], ['reading', 'Reading list'], ['contributions', 'Contributions'], ['education', 'Education'],
+  ].filter(([id]) => id !== 'reading' || hasReading);
+
+  // Reading list: everything being read now, the four most recently finished, and a link to the full list (reading.html)
+  const shelf = (label, list) => list.length ? `<div class="sb-label">${label}</div><div class="rl-shelf">${list.map((r) => `
+    <div class="rl-item">${READING.cover(r)}<div class="rl-title">${r.title}</div><div class="rl-by">${r.author ?? ''}</div></div>`).join('')}</div>` : '';
+  const readingSection = () => `
+      <section id="reading"><h2 class="sb-heading">Reading list</h2>
+        ${shelf('Reading now', READING.now())}${shelf('Recently read', READING.finished().slice(0, 4))}
+        <a class="sb-more rl-all" href="reading.html">See the full reading list →</a>
+      </section>
+`;
 
   const employer = (e) => `
     <div class="sb-entry">
@@ -88,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div><div class="sb-org">${r.title}</div><div class="sb-res-desc">${r.desc}</div><a class="sb-more" href="${r.file}" target="_blank" rel="noopener noreferrer">Download PDF →</a></div></div>`).join('')}
       </section>
 
+${hasReading ? readingSection() : ''}
       <section id="contributions"><h2 class="sb-heading">Other contributions</h2>${d.volunteer.map(employer).join('')}</section>
 
       <section id="education"><h2 class="sb-heading">Education</h2>

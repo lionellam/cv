@@ -38,19 +38,23 @@ A single-page, static CV website. No frameworks, no build tools, no server-side 
 ```
 Project-CV/
 ├── index.html          # The page shell — containers and render script
+├── reading.html        # The full reading list, linked from the CV's Reading list section
 ├── content.js          # All CV content (the only file you normally edit)
 ├── config.js           # Site configuration (active theme and layout)
 ├── css/
 │   ├── theme.css       # Colour tokens for all themes (light + dark variants)
 │   ├── base.css        # Classic layout: layout, typography, component styles
-│   └── layout-sidebar.css  # Sidebar layout styles (used instead of base.css)
+│   ├── layout-sidebar.css  # Sidebar layout styles (used instead of base.css)
+│   └── reading.css     # Reading list covers (the CV section and reading.html)
 ├── js/
-│   └── layout-sidebar.js   # Draws the sidebar layout from content.js
+│   ├── layout-sidebar.js   # Draws the sidebar layout from content.js
+│   └── reading.js      # Reading list helpers (covers, dates), shared with reading.html
 ├── files/
 │   └── lionellam-cv.pdf    # Downloadable CV PDF
 ├── img/
 │   ├── badge-*.png     # Certification badge images
-│   └── logo-*.png      # University logo images
+│   ├── logo-*.png      # University logo images
+│   └── reading/        # Reading list cover images (create when the first one is added)
 ├── THEMES.md           # Theme configuration instructions
 └── SITE_SPEC.md        # This file
 ```
@@ -89,6 +93,8 @@ const RESUME_DATA = {
   skills: [ ... ],
   certifications: [ ... ],
   publications: [ ... ],
+  resources: [ ... ],
+  readingList: [ ... ],
   education: [ ... ]
 };
 ```
@@ -249,7 +255,31 @@ Displayed as a three-column row: period | degree + school | logo.
 
 ---
 
-### 4.11 `lastUpdated`
+### 4.11 `readingList`
+
+```js
+readingList: [
+  {
+    title: "Thinking in Systems: A Primer",
+    author: "Donella H. Meadows",
+    type: "Book",                 // "Book" or "Journal"
+    status: "reading",            // "reading" (reading now) or "read"
+    finished: "2026-10",          // "YYYY-MM", for items that have been read
+    link: "https://…",                        // optional, makes the title a link on reading.html
+    cover: "img/reading/thinking-in-systems.jpg"  // optional
+  }
+]
+```
+
+Books and journals being read now, and already read. Sidebar layout only; the classic layout doesn't show it.
+
+- **On the CV:** a Reading list section after Resources, with its own menu item, showing two shelves of covers: **Reading now** (everything with `status: "reading"`) and **Recently read** (the four most recently finished, by `finished`), each with its title and author, then a **See the full reading list →** link. Four covers to a row, two on phones. The section and its menu item stay hidden while the list is empty.
+- **On `reading.html`:** the whole list, with a short introduction, filters for All / Books / Journals (shown only when the list has both), and groups for **Reading now** and then **Read in** each year, newest first, each with its count. Each group is a grid of covers, five in a row (two on phones), with the title (linked if `link` is set) and author beneath. The page uses the configured theme, in dark if the visitor chose dark on the CV, and has a "← Back to CV" link.
+- **Covers:** with `cover`, the image is shown, cropped to a book's 2:3 shape; about 400 × 600 pixels and under 150 KB is plenty. Without it, a cover is drawn from the title and author in a muted colour picked from the title (journals are drawn squarer and labelled "Journal"). The drawn cover's colour can be chosen with `colour: "#2f4a5b"`.
+
+---
+
+### 4.12 `lastUpdated`
 
 ```js
 lastUpdated: "7 July 2026"
@@ -450,6 +480,11 @@ Append a new object to the `skills` array: `{ category: "Category Name", tags: [
 ### Add a publication
 Append a new object to the `publications` array with `title`, `date`, `link`, and `bullets`.
 
+### Add to the reading list
+1. Add an object to `readingList` in `content.js` with `title`, `author`, `type` and `status: "reading"` (see Section 4.11).
+2. Optionally, put its cover image in `img/reading/` and set `cover`.
+3. When you finish it, change `status` to `"read"` and add `finished: "YYYY-MM"`.
+
 ### Change the active theme
 Edit `config.js` — set `theme` to `"gold"`, `"slate"`, or `"paper"`.
 
@@ -502,7 +537,7 @@ Ideas discussed but not yet scheduled.
 
 *Discussed 22 November 2026; deferred to a future release.*
 
-**Today:** in the sidebar layout, the menu's labels and order are a fixed list in `js/layout-sidebar.js` (`sections`), and the page draws its sections in a fixed order in the same file, each with its own heading. `content.js` only holds the text inside each section. The two can differ: the menu says "Contributions" where the heading says "Other contributions". Adding a section to `content.js` doesn't add it to the menu or the page. The classic layout's menu is written twice in `index.html`.
+**Today:** in the sidebar layout, the menu's labels and order are a fixed list in `js/layout-sidebar.js` (`sections`; since November 2026 it includes Reading list, which is left out while `readingList` is empty), and the page draws its sections in a fixed order in the same file, each with its own heading. `content.js` only holds the text inside each section. The two can differ: the menu says "Contributions" where the heading says "Other contributions". Adding a section to `content.js` doesn't add it to the menu or the page. The classic layout's menu is written twice in `index.html`.
 
 **Options considered:**
 

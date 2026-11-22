@@ -1,0 +1,11 @@
+/* Reading list covers, shared by the CV's Reading list section and the full page (reading.html).
+   A supplied image (cover in content.js) is shown as it is; without one, a cover is drawn from the title and author. */
+.rl-cover { display: block; width: 100%; aspect-ratio: 2 / 3; border-radius: 3px 6px 6px 3px; box-shadow: 0 1px 2px rgba(0,0,0,.12), 0 6px 16px rgba(0,0,0,.10); }
+.rl-img { object-fit: cover; background: var(--border-light); }
+.rl-drawn { padding: 12px 10px 10px 14px; display: flex; flex-direction: column; justify-content: space-between; color: #fffdf7; position: relative; overflow: hidden; }
+.rl-drawn::before { content: ''; position: absolute; inset: 0 auto 0 0; width: 5px; background: rgba(0,0,0,.18); }
+.rl-drawn .ct { font-size: 13px; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+.rl-drawn .ca { font-size: 10.5px; opacity: .85; }
+.rl-drawn.journal { border-radius: 2px; padding: 10px; }
+.rl-drawn.journal::before { display: none; }
+.rl-drawn.journal .cj { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; opacity: .8; border-bottom: 1px solid rgba(255,255,255,.4); padding-bottom: 6px; }
