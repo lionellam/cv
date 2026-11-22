@@ -193,7 +193,8 @@ const RESUME_DATA = {
     { title: "Everyday Habits for Transforming Systems: The Catalytic Power of Radical Engagement", author: "Adam Kahane", type: "Book", status: "read", finished: "2026-10", cover: "img/reading/everyday-habits-for-transforming-systems.jpg" },
     { title: "Action Inquiry: The Secret of Timely and Transforming Leadership", author: "Bill Torbert and Associates", type: "Book", status: "read", finished: "2026-07", cover: "img/reading/action-inquiry.jpg" },
     { title: "Creative Project Management: Innovative Project Options to Solve Problems On Time and Under Budget", author: "Michael S. Dobson & Ted Leemann", type: "Book", status: "read", finished: "2020-12", cover: "img/reading/creative-project-management.jpg" },
-    { title: "Understanding Agile Values & Principles: An Examination of the Agile Manifesto", author: "Scott Duncan", type: "Book", status: "read", finished: "2021-05", cover: "img/reading/understanding-agile-values-and-principles.jpg" }
+    { title: "Understanding Agile Values & Principles: An Examination of the Agile Manifesto", author: "Scott Duncan", type: "Book", status: "read", finished: "2021-05", cover: "img/reading/understanding-agile-values-and-principles.jpg" },
+    { title: "Range: How Generalists Triumph in a Specialized World", author: "David Epstein", type: "Book", status: "read", finished: "2020-11", cover: "img/reading/range.jpg" }
   ],
   education: [
     { period: "2025 – 2027 (Expected)", degree: "Master of Science in Project Management", school: "Nanyang Technological University (NTU), Singapore", logo: "img/logo-ntu.png" },
