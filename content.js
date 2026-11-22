@@ -187,7 +187,11 @@ const RESUME_DATA = {
   //     finished: "YYYY-MM" (when read), link: "https://…" (optional, makes the title a link on reading.html),
   //     cover: "img/reading/file.jpg" (optional; without it a cover is drawn from the title) }
   readingList: [
-    { title: "From Foresight to Action: Your Strategic Decision-Making Playbook", author: "Joana Lenkova", type: "Book", status: "reading", cover: "img/reading/from-foresight-to-action.jpg" }
+    { title: "From Foresight to Action: Your Strategic Decision-Making Playbook", author: "Joana Lenkova", type: "Book", status: "reading", cover: "img/reading/from-foresight-to-action.jpg" },
+    { title: "An Everyone Culture: Becoming a Deliberately Developmental Organization", author: "Robert Kegan & Lisa Laskow Lahey", type: "Book", status: "reading", cover: "img/reading/an-everyone-culture.jpg" },
+    { title: "Man's Search for Meaning", author: "Viktor E. Frankl", type: "Book", status: "read", finished: "2026-10", cover: "img/reading/mans-search-for-meaning.jpg" },
+    { title: "Everyday Habits for Transforming Systems: The Catalytic Power of Radical Engagement", author: "Adam Kahane", type: "Book", status: "read", finished: "2026-10", cover: "img/reading/everyday-habits-for-transforming-systems.jpg" },
+    { title: "Action Inquiry: The Secret of Timely and Transforming Leadership", author: "Bill Torbert and Associates", type: "Book", status: "read", finished: "2026-07", cover: "img/reading/action-inquiry.jpg" }
   ],
   education: [
     { period: "2025 – 2027 (Expected)", degree: "Master of Science in Project Management", school: "Nanyang Technological University (NTU), Singapore", logo: "img/logo-ntu.png" },
