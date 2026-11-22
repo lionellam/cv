@@ -191,7 +191,8 @@ const RESUME_DATA = {
     { title: "An Everyone Culture: Becoming a Deliberately Developmental Organization", author: "Robert Kegan & Lisa Laskow Lahey", type: "Book", status: "reading", cover: "img/reading/an-everyone-culture.jpg" },
     { title: "Man's Search for Meaning", author: "Viktor E. Frankl", type: "Book", status: "read", finished: "2026-10", cover: "img/reading/mans-search-for-meaning.jpg" },
     { title: "Everyday Habits for Transforming Systems: The Catalytic Power of Radical Engagement", author: "Adam Kahane", type: "Book", status: "read", finished: "2026-10", cover: "img/reading/everyday-habits-for-transforming-systems.jpg" },
-    { title: "Action Inquiry: The Secret of Timely and Transforming Leadership", author: "Bill Torbert and Associates", type: "Book", status: "read", finished: "2026-07", cover: "img/reading/action-inquiry.jpg" }
+    { title: "Action Inquiry: The Secret of Timely and Transforming Leadership", author: "Bill Torbert and Associates", type: "Book", status: "read", finished: "2026-07", cover: "img/reading/action-inquiry.jpg" },
+    { title: "Creative Project Management: Innovative Project Options to Solve Problems On Time and Under Budget", author: "Michael S. Dobson & Ted Leemann", type: "Book", status: "read", finished: "2020-12", cover: "img/reading/creative-project-management.jpg" }
   ],
   education: [
     { period: "2025 – 2027 (Expected)", degree: "Master of Science in Project Management", school: "Nanyang Technological University (NTU), Singapore", logo: "img/logo-ntu.png" },
