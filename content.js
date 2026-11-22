@@ -204,7 +204,8 @@ const RESUME_DATA = {
     { title: "The Design of Everyday Things", author: "Don Norman", type: "Book", status: "read", finished: "2021-12", cover: "img/reading/the-design-of-everyday-things.jpg" },
     { title: "Human Nature Prepares for a Momentous Leap", author: "Clare W. Graves · The Futurist, 1974", type: "Journal", status: "read", finished: "2026-03" },
     { title: "Nine Levels of Increasing Embrace in Ego Development: A Full-Spectrum Theory of Vertical Growth and Meaning Making", author: "Susanne R. Cook-Greuter · 2013", type: "Journal", status: "read", finished: "2025-11" },
-    { title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones", author: "James Clear", type: "Book", status: "read", finished: "2020-08", cover: "img/reading/atomic-habits.jpg" }
+    { title: "Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones", author: "James Clear", type: "Book", status: "read", finished: "2020-08", cover: "img/reading/atomic-habits.jpg" },
+    { title: "Seven Transformations of Leadership", author: "David Rooke & William R. Torbert · Harvard Business Review, 2005", type: "Journal", status: "read", finished: "2025-10" }
   ],
   education: [
     { period: "2025 – 2027 (Expected)", degree: "Master of Science in Project Management", school: "Nanyang Technological University (NTU), Singapore", logo: "img/logo-ntu.png" },
