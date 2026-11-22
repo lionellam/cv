@@ -199,7 +199,8 @@ const RESUME_DATA = {
     { title: "Outliers: The Story of Success", author: "Malcolm Gladwell", type: "Book", status: "read", finished: "2020-07", cover: "img/reading/outliers.jpg" },
     { title: "Moonwalking with Einstein: The Art and Science of Remembering Everything", author: "Joshua Foer", type: "Book", status: "read", finished: "2021-09", cover: "img/reading/moonwalking-with-einstein.jpg" },
     { title: "Metabolical: The Lure and the Lies of Processed Food, Nutrition, and Modern Medicine", author: "Robert H. Lustig", type: "Book", status: "read", finished: "2023-08", cover: "img/reading/metabolical.jpg" },
-    { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", type: "Book", status: "read", finished: "2021-08", cover: "img/reading/thinking-fast-and-slow.jpg" }
+    { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", type: "Book", status: "read", finished: "2021-08", cover: "img/reading/thinking-fast-and-slow.jpg" },
+    { title: "The Design of Everyday Things", author: "Don Norman", type: "Book", status: "read", finished: "2021-12", cover: "img/reading/the-design-of-everyday-things.jpg" }
   ],
   education: [
     { period: "2025 – 2027 (Expected)", degree: "Master of Science in Project Management", school: "Nanyang Technological University (NTU), Singapore", logo: "img/logo-ntu.png" },
