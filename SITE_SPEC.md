@@ -16,6 +16,7 @@ A personal reference document covering the structure, design system, and content
 8. [How to Make Common Changes](#8-how-to-make-common-changes)
 9. [Running Locally](#9-running-locally)
 10. [Deployment](#10-deployment)
+11. [Possible Future Changes](#11-possible-future-changes)
 
 ---
 
@@ -490,3 +491,23 @@ Deployment is automatic — any push to `main` goes live within seconds.
    ```
 
 There is no build step. What you see locally is exactly what goes live.
+
+---
+
+## 11. Possible Future Changes
+
+Ideas discussed but not yet scheduled.
+
+### Drive the menu and section order from `content.js`
+
+*Discussed 22 November 2026; deferred to a future release.*
+
+**Today:** in the sidebar layout, the menu's labels and order are a fixed list in `js/layout-sidebar.js` (`sections`), and the page draws its sections in a fixed order in the same file, each with its own heading. `content.js` only holds the text inside each section. The two can differ: the menu says "Contributions" where the heading says "Other contributions". Adding a section to `content.js` doesn't add it to the menu or the page. The classic layout's menu is written twice in `index.html`.
+
+**Options considered:**
+
+- **A. Menu only:** a `sections` list in `content.js` (`id`, `label`) builds the menu, but the page keeps its fixed order. Smallest change, but the menu and page can disagree, and removing an item hides it from the menu only.
+- **B. Menu and page follow one list (recommended):** `sections: [{ id, menu, heading }]` in `content.js`, where `heading` is only needed when it differs from `menu` (for example `{ id: "contributions", menu: "Contributions", heading: "Other contributions" }`). The layout keeps one drawing function per section, keyed by `id`, draws them in the list's order and builds the menu from the same list. Reordering, relabelling or hiding a section is then a `content.js` change; a new kind of section still needs code, and an unknown `id` is skipped with a console warning. The scroll highlight, "the first section scrolls to the top" and "the last section is marked at the bottom of the page" would follow the list's first and last entries.
+- **C. Fully data-driven sections:** each section in `content.js` declares a type (paragraphs, dated entries, tag rows, badge cards, download links) drawn by general functions, so new sections need no code. A large rewrite with a real risk of changing each section's hand-tuned look; more than the site needs today.
+
+**Also to decide:** whether the classic layout (not in use) follows the list too (suggested: leave it as it is, and say so here); whether `lastUpdated` is bumped for a change visitors can't see (suggested: no); and documenting the `sections` list in Section 4.
