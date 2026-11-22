@@ -5,5 +5,5 @@ const SITE_CONFIG = {
 
   // Available layouts: "classic" | "sidebar"
   // "classic" is the original layout; "sidebar" is the minimal layout with a side menu
-  layout: "sidebar"
+  layout: "classic"
 };

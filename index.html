@@ -49,6 +49,7 @@
         <li><a href="#certifications-header">Certifications</a></li>
         <li><a href="#publications-header">Publications</a></li>
         <li><a href="#resources-header">Resources</a></li>
+        <li data-reading hidden><a href="#reading-header">Reading List</a></li>
         <li><a href="#volunteer-header">Contributions</a></li>
         <li><a href="#education-header">Education</a></li>
       </ul>
@@ -77,6 +78,7 @@
       <a href="#certifications-header" onclick="this.parentElement.classList.remove('open')">Certifications</a>
       <a href="#publications-header" onclick="this.parentElement.classList.remove('open')">Publications</a>
       <a href="#resources-header" onclick="this.parentElement.classList.remove('open')">Resources</a>
+      <a href="#reading-header" data-reading hidden onclick="this.parentElement.classList.remove('open')">Reading List</a>
       <a href="#volunteer-header" onclick="this.parentElement.classList.remove('open')">Contributions</a>
       <a href="#education-header" onclick="this.parentElement.classList.remove('open')">Education</a>
     </div>
@@ -142,6 +144,13 @@
       <div id="resources-container"></div>
     </section>
 
+    <section class="section" id="reading-section" data-reading hidden>
+      <div class="section-header" id="reading-header">
+        <h2 class="section-title">Reading List</h2><div class="section-rule"></div>
+      </div>
+      <div id="reading-container"></div>
+    </section>
+
     <section class="section">
       <div class="section-header" id="volunteer-header">
         <h2 class="section-title">Other Contributions</h2><div class="section-rule"></div>
@@ -164,6 +173,8 @@
 
   <!-- LOAD CONTENT DATA -->
   <script src="content.js"></script>
+  <!-- Reading list helpers (covers, dates), used by both layouts -->
+  <script src="js/reading.js"></script>
 
   <!-- RENDER LOGIC -->
   <script>
@@ -249,6 +260,18 @@
         </div>
       `).join('')}</div>`;
 
+      // Reading list: everything being read now, the four most recently finished, and a link to the full list (reading.html).
+      // The section and its menu items stay hidden while readingList in content.js is empty
+      if (typeof READING !== 'undefined' && READING.list().length) {
+        const shelf = (label, list) => list.length ? `<div class="reading-label">${label}</div><div class="reading-grid">${list.map(r => `
+          <div class="reading-item">${READING.cover(r)}<div class="reading-title">${r.title}</div><div class="reading-author">${r.author ?? ''}</div></div>
+        `).join('')}</div>` : '';
+        document.getElementById('reading-container').innerHTML =
+          shelf('Reading now', READING.now()) + shelf('Recently read', READING.finished().slice(0, 4)) +
+          '<a class="reading-all" href="reading.html">See the full reading list →</a>';
+        document.querySelectorAll('[data-reading]').forEach(el => { el.hidden = false; });
+      }
+
       // Contributions
       document.getElementById('volunteer-container').innerHTML = d.volunteer.map(e => `
         <div class="employer-block">
@@ -303,8 +326,7 @@
     });
   </script>
 
-  <!-- SIDEBAR LAYOUT (draws only when the sidebar layout is chosen); reading.js helps draw the Reading list -->
-  <script src="js/reading.js"></script>
+  <!-- SIDEBAR LAYOUT (draws only when the sidebar layout is chosen) -->
   <script src="js/layout-sidebar.js"></script>
 </body>
 </html>

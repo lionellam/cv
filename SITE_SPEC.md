@@ -271,9 +271,9 @@ readingList: [
 ]
 ```
 
-Books and journals being read now, and already read. Sidebar layout only; the classic layout doesn't show it.
+Books and journals being read now, and already read. Both layouts show it.
 
-- **On the CV:** a Reading list section after Resources, with its own menu item, showing two shelves of covers: **Reading now** (everything with `status: "reading"`) and **Recently read** (the four most recently finished, by `finished`), each with its title and author, then a **See the full reading list →** link. Four covers to a row, two on phones. The section and its menu item stay hidden while the list is empty.
+- **On the CV:** a Reading list section after Resources ("Reading List" in the classic layout, where each cover sits on a card with a gold top edge, like Certifications), with its own menu item, showing two shelves of covers: **Reading now** (everything with `status: "reading"`) and **Recently read** (the four most recently finished, by `finished`), each with its title and author, then a **See the full reading list →** link. Four covers to a row, two on phones. The section and its menu item stay hidden while the list is empty.
 - **On `reading.html`:** the whole list, with a short introduction, filters for All / Books / Journals (shown only when the list has both), and two groups, each with its count: **Reading now**, then **Read**, with every finished item newest first. Each group is a grid of covers, five in a row (two on phones), with the title (linked if `link` is set) and author beneath; finished items also show the month they were finished, for example "Finished Oct 2026". The page uses the configured theme, in dark if the visitor chose dark on the CV, and has a "← Back to CV" link.
 - **Covers:** with `cover`, the image is shown, cropped to a book's 2:3 shape; about 400 × 600 pixels and under 150 KB is plenty. Without it, a cover is drawn from the title and author in a muted colour picked from the title (journals are drawn squarer and labelled "Journal"). The drawn cover's colour can be chosen with `colour: "#2f4a5b"`.
 
@@ -537,7 +537,7 @@ Ideas discussed but not yet scheduled.
 
 *Discussed 22 November 2026; deferred to a future release.*
 
-**Today:** in the sidebar layout, the menu's labels and order are a fixed list in `js/layout-sidebar.js` (`sections`; since November 2026 it includes Reading list, which is left out while `readingList` is empty), and the page draws its sections in a fixed order in the same file, each with its own heading. `content.js` only holds the text inside each section. The two can differ: the menu says "Contributions" where the heading says "Other contributions". Adding a section to `content.js` doesn't add it to the menu or the page. The classic layout's menu is written twice in `index.html`.
+**Today:** in the sidebar layout, the menu's labels and order are a fixed list in `js/layout-sidebar.js` (`sections`; since November 2026 it includes Reading list, which is left out while `readingList` is empty), and the page draws its sections in a fixed order in the same file, each with its own heading. `content.js` only holds the text inside each section. The two can differ: the menu says "Contributions" where the heading says "Other contributions". Adding a section to `content.js` doesn't add it to the menu or the page. The classic layout's menu is written twice in `index.html` (its Reading List items are marked `data-reading` and stay hidden while the list is empty). With nine items, the classic top menu tightens its spacing below 1,140px and switches to the phone menu below 1,000px.
 
 **Options considered:**
 
