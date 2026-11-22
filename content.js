@@ -194,7 +194,11 @@ const RESUME_DATA = {
     { title: "Action Inquiry: The Secret of Timely and Transforming Leadership", author: "Bill Torbert and Associates", type: "Book", status: "read", finished: "2026-07", cover: "img/reading/action-inquiry.jpg" },
     { title: "Creative Project Management: Innovative Project Options to Solve Problems On Time and Under Budget", author: "Michael S. Dobson & Ted Leemann", type: "Book", status: "read", finished: "2020-12", cover: "img/reading/creative-project-management.jpg" },
     { title: "Understanding Agile Values & Principles: An Examination of the Agile Manifesto", author: "Scott Duncan", type: "Book", status: "read", finished: "2021-05", cover: "img/reading/understanding-agile-values-and-principles.jpg" },
-    { title: "Range: How Generalists Triumph in a Specialized World", author: "David Epstein", type: "Book", status: "read", finished: "2020-11", cover: "img/reading/range.jpg" }
+    { title: "Range: How Generalists Triumph in a Specialized World", author: "David Epstein", type: "Book", status: "read", finished: "2020-11", cover: "img/reading/range.jpg" },
+    { title: "Scrum: The Art of Doing Twice the Work in Half the Time", author: "Jeff Sutherland", type: "Book", status: "read", finished: "2020-10", cover: "img/reading/scrum.jpg" },
+    { title: "Outliers: The Story of Success", author: "Malcolm Gladwell", type: "Book", status: "read", finished: "2020-07", cover: "img/reading/outliers.jpg" },
+    { title: "Moonwalking with Einstein: The Art and Science of Remembering Everything", author: "Joshua Foer", type: "Book", status: "read", finished: "2021-09", cover: "img/reading/moonwalking-with-einstein.jpg" },
+    { title: "Metabolical: The Lure and the Lies of Processed Food, Nutrition, and Modern Medicine", author: "Robert H. Lustig", type: "Book", status: "read", finished: "2023-08", cover: "img/reading/metabolical.jpg" }
   ],
   education: [
     { period: "2025 – 2027 (Expected)", degree: "Master of Science in Project Management", school: "Nanyang Technological University (NTU), Singapore", logo: "img/logo-ntu.png" },
