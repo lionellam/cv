@@ -171,3 +171,5 @@ footer p, footer a { font-size: 14px; font-weight: 500; color: var(--text-faint)
   footer { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 @media (max-width: 480px) { .cert-list { grid-template-columns: 1fr; } }
+/* A project's links (e.g. Project Home, Product Brief), in a row below its bullets */
+.project-links { display: flex; flex-wrap: wrap; gap: 10px; }

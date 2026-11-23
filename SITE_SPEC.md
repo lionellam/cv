@@ -50,7 +50,8 @@ Project-CV/
 │   ├── layout-sidebar.js   # Draws the sidebar layout from content.js
 │   └── reading.js      # Reading list helpers (covers, dates), shared with reading.html
 ├── files/
-│   └── lionellam-cv.pdf    # Downloadable CV PDF
+│   ├── lionellam-cv.pdf    # Downloadable CV PDF
+│   └── hercules-product-brief.pdf  # Project Hercules Product Brief, linked from its project
 ├── img/
 │   ├── badge-*.png     # Certification badge images
 │   ├── logo-*.png      # University logo images
@@ -161,7 +162,7 @@ experience: [
 **Notes:**
 - One employer can have multiple projects (they appear as rows under the same employer block).
 - `bullets` can be an empty array `[]` if there is nothing to add yet.
-- A project can have an optional `link: { label, url }`, shown below its bullets as "label →" and opened in a new tab (a gold button in the classic layout, a text link in the sidebar layout). Project Hercules uses it for its Project Home.
+- A project can have optional `links: [{ label, url }, ...]`, shown in a row below its bullets, each opening in a new tab: gold buttons reading "label →" in the classic layout, and small outlined pills in the sidebar layout, each with an icon (a document for a PDF, a globe for a web page). A `url` can be a web address or a file in `files/`. Project Hercules uses them for its Project Home and its Product Brief (`files/hercules-product-brief.pdf`).
 - The `<br>` tag in `period` is intentional — it separates the date from the division/agency name on a second line.
 
 ---
@@ -355,6 +356,7 @@ const SITE_CONFIG = {
 - **Side menu** (pinned on the left while the page scrolls): job title, name, post-nominals, contact links, the list of sections, and at the bottom the **Download CV** button, the light/dark switch and "Last updated".
 - **Current section:** the section being read is marked in the menu with an accent bar. Choosing a section from the menu keeps it marked until the reader scrolls by hand, and at the very bottom of the page the last section (Education) is marked, since it can be too short to reach the reading position. Choosing **Summary**, the first section, scrolls right to the top of the page (on phones, back above the profile), rather than to the Summary heading; opening the page at `#summary` does the same.
 - **Reading column:** one column of content, with a hairline after each section heading, and the © footer at the bottom, level with "Last updated" in the menu. Certifications show two per row, with a 56px badge beside each name. Bulleted lists (Experience, Publications, Other contributions) use the classic layout's gold dot (`--accent-light`), with the sidebar's slightly smaller 14.5px text and 10px between bullets.
+- **Links in the reading column:** "Read article", "Download PDF", a project's links and "See the full reading list" are small outlined gold pills, each with an icon (a globe for a web page, a document for a PDF, a book for the reading list), filling with gold on hover. All but the reading list open in a new tab. The classic layout keeps its "label →" buttons.
 - **Wide screens:** the side menu and reading column form one centred block, at most 1,240px wide. On screens wider than 1,280px, where the block leaves a margin on each side, it has a hairline down each outer edge (`--border-light`, matching the line beside the menu) and a soft 32px shadow beyond it, so the column sits above the margins like a sheet of paper. The block runs the full height of the page, and its shadow is clipped to the left and right sides. A copy of the column (background, outer lines, the line beside the menu and the shadow) is drawn on a layer fixed behind the page (`body::before`), lined up exactly with the block, so it can't be seen at rest. When a trackpad or phone pulls past the top or bottom of the page (rubber banding), the layer stays put and the column carries on into the pulled area instead of stopping abruptly. This relies on the browser keeping fixed elements still while rubber banding; a browser that doesn't simply shows the column ending, as before. The shadow colour is set per theme (`--sb-shadow` in `css/layout-sidebar.css`): warm for gold, blue-grey for slate, neutral for paper, and a deeper black in dark mode, where it is much less visible.
 
 **Phones and narrow windows (900px and narrower):**

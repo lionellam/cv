@@ -17,9 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const readingSection = () => `
       <section id="reading"><h2 class="sb-heading">Reading list</h2>
         ${shelf('Reading now', READING.now())}${shelf('Recently read', READING.finished().slice(0, 4))}
-        <a class="sb-more rl-all" href="reading.html">See the full reading list →</a>
+        <div class="sb-links rl-all">${pill('reading.html', 'See the full reading list', icons.book, false)}</div>
       </section>
 `;
+
+  // Links in the reading column are small outlined pills with an icon: a document for a PDF, a globe for a web page,
+  // a book for the full reading list
+  const svg = (paths) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+  const icons = {
+    pdf: svg('<path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 13h6M9 17h6"/>'),
+    web: svg('<circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8"/><path d="M11.5 3a17 17 0 0 0 0 18M12.5 3a17 17 0 0 1 0 18"/>'),
+    book: svg('<path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"/><path d="M3 6v13M12 6v13M21 6v13"/>'),
+  };
+  const linkIcon = (url) => (/\.pdf$/i.test(url) ? icons.pdf : icons.web);
+  const pill = (url, label, icon = linkIcon(url), newTab = true) =>
+    `<a class="sb-pill" href="${url}"${newTab ? ' target="_blank" rel="noopener noreferrer"' : ''}>${icon}${label}</a>`;
 
   const employer = (e) => `
     <div class="sb-entry">
@@ -27,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div>
         <div class="sb-org">${e.employer}</div>
         <div class="sb-role">${e.role}</div>
-        ${e.projects.map((p, i) => `${i ? `<div class="sb-when" style="margin-top:14px">${p.period}</div>` : ''}<div class="sb-proj">${p.title}</div>${bullets(p.bullets)}${p.link ? `<a class="sb-more" href="${p.link.url}" target="_blank" rel="noopener noreferrer">${p.link.label} →</a>` : ''}`).join('')}
+        ${e.projects.map((p, i) => `${i ? `<div class="sb-when" style="margin-top:14px">${p.period}</div>` : ''}<div class="sb-proj">${p.title}</div>${bullets(p.bullets)}${p.links ? `<div class="sb-links">${p.links.map((l) => `${pill(l.url, l.label)}`).join('')}</div>` : ''}`).join('')}
       </div>
     </div>`;
 
@@ -91,13 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
       <section id="publications"><h2 class="sb-heading">Publications</h2>
         ${d.publications.map((p) => `
           <div class="sb-entry"><div class="sb-when">${p.date}</div>
-            <div><a class="sb-pub-title" href="${p.link}">${p.title}</a>${bullets(p.bullets)}<a class="sb-more" href="${p.link}">Read article →</a></div></div>`).join('')}
+            <div><a class="sb-pub-title" href="${p.link}">${p.title}</a>${bullets(p.bullets)}<div class="sb-links">${pill(p.link, 'Read article', icons.web)}</div></div></div>`).join('')}
       </section>
 
       <section id="resources"><h2 class="sb-heading">Resources</h2>
         ${d.resources.map((r) => `
           <div class="sb-res">${r.thumbnail ? `<img src="${r.thumbnail}" alt="">` : '<span></span>'}
-            <div><div class="sb-org">${r.title}</div><div class="sb-res-desc">${r.desc}</div><a class="sb-more" href="${r.file}" target="_blank" rel="noopener noreferrer">Download PDF →</a></div></div>`).join('')}
+            <div><div class="sb-org">${r.title}</div><div class="sb-res-desc">${r.desc}</div><div class="sb-links">${pill(r.file, 'Download PDF', icons.pdf)}</div></div></div>`).join('')}
       </section>
 
 ${hasReading ? readingSection() : ''}

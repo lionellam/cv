@@ -89,8 +89,6 @@ a { color: inherit; }
 
 .sb-pub-title { font-size: 15px; font-weight: 600; color: var(--heading); text-decoration: none; }
 .sb-pub-title:hover { color: var(--accent); }
-.sb-more { display: inline-block; margin-top: 4px; font-size: 13px; color: var(--accent); text-decoration: none; }
-.sb-more:hover { text-decoration: underline; }
 
 .sb-res { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center; padding: 16px 0; border-top: 1px solid var(--border-light); }
 .sb-res:first-of-type { border-top: none; padding-top: 0; }
@@ -101,7 +99,7 @@ a { color: inherit; }
 .rl-shelf { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px 18px; margin-bottom: 30px; }
 .rl-title { font-size: 13.5px; font-weight: 600; color: var(--heading); margin-top: 10px; line-height: 1.3; }
 .rl-by { font-size: 12.5px; color: var(--text-muted); }
-.rl-all { font-size: 14px; margin-top: -8px; }
+.rl-all { margin-top: -8px; }
 /* The covers themselves are styled in css/reading.css */
 .sb-edu { display: grid; grid-template-columns: 170px 1fr auto; gap: 0 28px; align-items: center; padding: 14px 0; border-top: 1px solid var(--border-light); }
 .sb-edu:first-of-type { border-top: none; padding-top: 0; }
@@ -157,3 +155,9 @@ a { color: inherit; }
   .sb-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
   .sb-top:hover { background: var(--accent-light); }
 }
+/* Links in the reading column (Read article, Download PDF, a project's links, the full reading list): small outlined pills in a row */
+.sb-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.sb-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; line-height: 1.4; color: var(--accent); text-decoration: none;
+           border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); border-radius: 999px; padding: 4px 12px; transition: .2s; }
+.sb-pill svg { width: 15px; height: 15px; flex: none; }
+.sb-pill:hover { background: var(--accent); border-color: var(--accent); color: var(--bg); }

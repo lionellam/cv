@@ -1,5 +1,5 @@
 const RESUME_DATA = {
-  lastUpdated: "23 November 2026",
+  lastUpdated: "24 November 2026",
   profile: {
     name: "Lionel Lam Song Poh",
     jobTitle: "Independent Scholar",
@@ -150,7 +150,10 @@ const RESUME_DATA = {
             "Delivered with lightweight project discipline: a decision record, specification and test plan updated before each change, design mockups before building, and semantic-versioned releases verified on a phone after each deploy.",
             "Uses AI-assisted requirements and specification work (Claude Code) with built-in traceability: the code cites the specification sections and decisions it implements, and each reviewed release ties its changelog, Git tag and document versions together."
           ],
-          link: { label: "Project Home", url: "https://lionellam.github.io/hercules/" }
+          links: [
+            { label: "Project Home", url: "https://lionellam.github.io/hercules/" },
+            { label: "Product Brief", url: "files/hercules-product-brief.pdf" }
+          ]
         }
       ]
     }
