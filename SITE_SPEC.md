@@ -161,6 +161,7 @@ experience: [
 **Notes:**
 - One employer can have multiple projects (they appear as rows under the same employer block).
 - `bullets` can be an empty array `[]` if there is nothing to add yet.
+- A project can have an optional `link: { label, url }`, shown below its bullets as "label →" and opened in a new tab (a gold button in the classic layout, a text link in the sidebar layout). Project Hercules uses it for its Project Home.
 - The `<br>` tag in `period` is intentional — it separates the date from the division/agency name on a second line.
 
 ---

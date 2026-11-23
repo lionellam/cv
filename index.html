@@ -202,6 +202,7 @@
               <div>
                 <div class="project-name">${p.title}</div>
                 <ul>${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+                ${p.link ? `<a class="pub-link" href="${p.link.url}" target="_blank" rel="noopener noreferrer">${p.link.label} →</a>` : ''}
               </div>
             </div>
           `).join('')}
@@ -283,6 +284,7 @@
               <div>
                 <div class="project-name">${p.title}</div>
                 <ul>${p.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+                ${p.link ? `<a class="pub-link" href="${p.link.url}" target="_blank" rel="noopener noreferrer">${p.link.label} →</a>` : ''}
               </div>
             </div>
           `).join('')}

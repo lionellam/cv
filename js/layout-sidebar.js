@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div>
         <div class="sb-org">${e.employer}</div>
         <div class="sb-role">${e.role}</div>
-        ${e.projects.map((p, i) => `${i ? `<div class="sb-when" style="margin-top:14px">${p.period}</div>` : ''}<div class="sb-proj">${p.title}</div>${bullets(p.bullets)}`).join('')}
+        ${e.projects.map((p, i) => `${i ? `<div class="sb-when" style="margin-top:14px">${p.period}</div>` : ''}<div class="sb-proj">${p.title}</div>${bullets(p.bullets)}${p.link ? `<a class="sb-more" href="${p.link.url}" target="_blank" rel="noopener noreferrer">${p.link.label} →</a>` : ''}`).join('')}
       </div>
     </div>`;
 
