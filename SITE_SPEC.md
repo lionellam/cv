@@ -350,6 +350,8 @@ const SITE_CONFIG = {
 };
 ```
 
+With `layout: "sidebar"`, a script in `index.html`'s `<head>` turns off `base.css` and writes the link to `css/layout-sidebar.css` into the page as it loads (`document.write`), so the browser waits for that stylesheet before showing the page, as it does for `base.css`. A stylesheet added by script any other way isn't waited for, and on a first visit the page would show unstyled for a moment.
+
 #### The sidebar layout in detail
 
 **Computers and tablets (wider than 900px):**

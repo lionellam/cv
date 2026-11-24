@@ -27,10 +27,10 @@
     })();
     if (window.SITE_LAYOUT === 'sidebar') {
       document.getElementById('classic-css').disabled = true;
-      const css = document.createElement('link');
-      css.rel = 'stylesheet';
-      css.href = 'css/layout-sidebar.css';
-      document.head.appendChild(css);
+      // Written into the page while it loads (not added with appendChild), so the browser waits for this stylesheet
+      // before showing anything, as it does for base.css. A stylesheet added by script isn't waited for, and on a first
+      // visit the page showed unstyled for a moment
+      document.write('<link rel="stylesheet" href="css/layout-sidebar.css" />');
       // Hide the classic page shell straight away, before the sidebar layout is drawn
       const hide = document.createElement('style');
       hide.textContent = 'body > :not(#sidebar-root):not(script) { display: none !important; }';
